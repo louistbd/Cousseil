@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.venv/
+.env
+*.zip
+.DS_Store
+Thumbs.db
+# Ne jamais versionner de cles AWS
+credentials*
+RECAP_EQUIPE.md
+CLAUDE.md
+identifiants_aws.txt

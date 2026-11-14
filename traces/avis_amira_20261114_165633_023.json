@@ -1,0 +1,1874 @@
+{
+  "persona": "amira",
+  "demande": "Tesla est partout dans les nouvelles, je veux y mettre 25 % de mon épargne.",
+  "avis": {
+    "alternative": {
+      "description": "Porter TSLA à 15 % (le maximum autorisé par la règle de concentration) plutôt qu'à 25 %, en réduisant proportionnellement les autres positions.",
+      "id_appel_verification": "A5",
+      "positions": [
+        {
+          "poids_pct": 4.25,
+          "symbole": "BTC-USD"
+        },
+        {
+          "poids_pct": 5.95,
+          "symbole": "CNR.TO"
+        },
+        {
+          "poids_pct": 4.25,
+          "symbole": "CSU.TO"
+        },
+        {
+          "poids_pct": 2.55,
+          "symbole": "ETH-USD"
+        },
+        {
+          "poids_pct": 4.25,
+          "symbole": "GLD"
+        },
+        {
+          "poids_pct": 6.8,
+          "symbole": "NVDA"
+        },
+        {
+          "poids_pct": 21.25,
+          "symbole": "QQQ"
+        },
+        {
+          "poids_pct": 5.95,
+          "symbole": "SHOP.TO"
+        },
+        {
+          "poids_pct": 17,
+          "symbole": "SPY"
+        },
+        {
+          "poids_pct": 15,
+          "symbole": "TSLA"
+        },
+        {
+          "poids_pct": 12.75,
+          "symbole": "XIU.TO"
+        }
+      ]
+    },
+    "faits": [
+      {
+        "affirmation": "Portefeuille actuel conforme à toutes les règles, avec une perte historique maximale de référence",
+        "id_appel": "A3",
+        "valeur": "-33,4 %"
+      },
+      {
+        "affirmation": "Avec TSLA à 25 %, le poids maximal autorisé pour un titre (15 %) est dépassé",
+        "id_appel": "A3",
+        "valeur": "25,0 % vs seuil 15 %"
+      },
+      {
+        "affirmation": "Avec TSLA à 25 %, la perte historique maximale du portefeuille s'aggrave",
+        "id_appel": "A3",
+        "valeur": "-39,3 %"
+      },
+      {
+        "affirmation": "Tesla seul a connu une perte historique très sévère",
+        "id_appel": "A2",
+        "valeur": "-68,2 % (2021-11-19 à 2023-01-06)"
+      },
+      {
+        "affirmation": "Avec TSLA ramené à 15 %, toutes les règles sont respectées et la perte max reste sous le seuil",
+        "id_appel": "A5",
+        "valeur": "-34,8 % (seuil -45 %)"
+      }
+    ],
+    "hypotheses": [
+      "Le seuil de 15 % par titre individuel est une hypothèse de l'équipe, pas une règle légale.",
+      "On suppose qu'Amira veut financer cette position en réduisant proportionnellement ses autres positions existantes.",
+      "Le poids de 25 % demandé est pris tel quel comme hypothèse de calcul (aucune autre précision donnée)."
+    ],
+    "limites": [
+      "Les indicateurs (rendement, volatilité, perte max) sont historiques (2021-2026) et ne prédisent pas l'avenir.",
+      "Aucune preuve ESG n'a été demandée ni vérifiée ici, car la demande ne porte pas sur ce critère.",
+      "La simulation ne tient pas compte de frais, d'impôts ou de rééquilibrage réel du portefeuille."
+    ],
+    "resume": "Mettre 25 % de votre épargne dans Tesla dépasse la limite de concentration fixée pour un titre individuel (15 %) et ferait grimper la perte historique maximale du portefeuille à -39,3 %, proche du plafond de -45 % que vous tolérez. Une position Tesla à 15 % reste conforme à toutes vos règles tout en gardant une bonne exposition à la croissance technologique. Rappel : les chiffres historiques ne garantissent rien pour l'avenir.",
+    "tensions_avec_profil": [
+      "Le profil d'Amira accepte un risque élevé, mais exige explicitement d'éviter la concentration (règle poids_max_titre = 15 %) : 25 % sur TSLA viole cette règle.",
+      "Le profil mentionne vouloir 'garder une certaine diversification et éviter de miser exclusivement sur la technologie' ; à 25 %, TSLA devient le plus gros titre du portefeuille, loin devant toute autre position (NVDA à 8 % avant)."
+    ],
+    "verdict": "incohérent"
+  },
+  "controles": [
+    {
+      "controle": "Au moins deux faits chiffrés",
+      "ok": true,
+      "detail": "5 fait(s)"
+    },
+    {
+      "controle": "Valeur « -33,4 % » (A3, simuler_modification)",
+      "ok": true,
+      "detail": "retrouvé dans la sortie de l'outil"
+    },
+    {
+      "controle": "Valeur « 25,0 % vs seuil 15 % » (A3, simuler_modification)",
+      "ok": true,
+      "detail": "retrouvé dans la sortie de l'outil"
+    },
+    {
+      "controle": "Valeur « -39,3 % » (A3, simuler_modification)",
+      "ok": true,
+      "detail": "retrouvé dans la sortie de l'outil"
+    },
+    {
+      "controle": "Valeur « -68,2 % (2021-11-19 à 2023-01-06) » (A2, indicateurs_actif)",
+      "ok": true,
+      "detail": "retrouvé dans la sortie de l'outil"
+    },
+    {
+      "controle": "Valeur « -34,8 % (seuil -45 %) » (A5, evaluer_portefeuille)",
+      "ok": true,
+      "detail": "retrouvé dans la sortie de l'outil"
+    },
+    {
+      "controle": "Alternative vérifiée par evaluer_portefeuille",
+      "ok": true,
+      "detail": "vérifiée et conforme"
+    },
+    {
+      "controle": "Limites et incertitudes indiquées",
+      "ok": true,
+      "detail": "3 limite(s)"
+    }
+  ],
+  "appels": {
+    "A1": {
+      "id_appel": "A1",
+      "outil": "profil_investisseur",
+      "entree": {
+        "persona": "amira"
+      },
+      "sortie": {
+        "id_appel": "A1",
+        "faits_de_l_enonce": {
+          "nom": "Amira",
+          "age": 26,
+          "situation": "Ingénieure logicielle, célibataire, sans enfant",
+          "experience": "intermédiaire",
+          "profil_risque": "élevé",
+          "horizon": "15 ans ou plus",
+          "objectif": "Faire croître son capital à long terme",
+          "preferences": [
+            "Très intéressée par l'IA, les technologies émergentes et les entreprises en forte croissance",
+            "Accepte une volatilité importante, intéressée par les cryptoactifs",
+            "Veut garder une certaine diversification et éviter de miser exclusivement sur la technologie"
+          ],
+          "test_central": "Un profil offensif n'autorise pas une concentration ou un risque sans limites."
+        },
+        "hypotheses_de_l_equipe": {
+          "portefeuille_actuel_fictif_pct": {
+            "QQQ": 25,
+            "SPY": 20,
+            "XIU.TO": 15,
+            "NVDA": 8,
+            "SHOP.TO": 7,
+            "CNR.TO": 7,
+            "CSU.TO": 5,
+            "BTC-USD": 5,
+            "GLD": 5,
+            "ETH-USD": 3
+          },
+          "regles": [
+            {
+              "regle": "poids_max_titre",
+              "seuil": 15,
+              "description": "Poids maximal d'un titre individuel ou d'un cryptoactif (les FNB, déjà diversifiés, sont exemptés)"
+            },
+            {
+              "regle": "crypto_max",
+              "seuil": 10,
+              "description": "Part maximale des cryptoactifs"
+            },
+            {
+              "regle": "tech_max",
+              "seuil": 50,
+              "description": "Part maximale de la technologie (secteurs Information Technology et Communication Services, et QQQ compté entièrement)"
+            },
+            {
+              "regle": "lignes_min",
+              "seuil": 6,
+              "description": "Nombre minimal de positions, pour garder une diversification"
+            },
+            {
+              "regle": "perte_max",
+              "seuil": -45,
+              "description": "Pire baisse historique tolérée du portefeuille (perte maximale du sommet au creux)"
+            }
+          ]
+        },
+        "source": "Personas de l'énoncé officiel ; portefeuilles actuels et seuils = hypothèses de l'équipe"
+      }
+    },
+    "A2": {
+      "id_appel": "A2",
+      "outil": "indicateurs_actif",
+      "entree": {
+        "symbole": "TSLA"
+      },
+      "sortie": {
+        "id_appel": "A2",
+        "symbole": "TSLA",
+        "nom": "Tesla",
+        "classe": "equity",
+        "secteur": "Consumer Discretionary",
+        "devise_de_cotation": "USD",
+        "devise_d_analyse": "CAD",
+        "rendement_annualise_pct": 5.5,
+        "rendement_cumule_pct": 30.9,
+        "volatilite_annualisee_pct": 55.8,
+        "perte_maximale_pct": -68.2,
+        "perte_maximale_periode": "2021-11-19 au 2023-01-06",
+        "rendement_2022_pct": -62.6,
+        "pire_semaine_pct": -18.5,
+        "periode": "semaines du 2021-11-19 au 2026-11-13 (261 semaines, dernier prix le 2026-11-12)",
+        "methode": "Prix convertis en CAD (USD x taux Banque du Canada du jour, ou dernier taux connu, jamais un taux futur), prix de fin de semaine (vendredi ou dernier prix connu), rendements hebdomadaires, annualisation sur 52 semaines, portefeuille rééquilibré chaque semaine aux poids indiqués, sans frais ni impôts.",
+        "avertissement": "Indicateurs historiques : ils ne prédisent pas les rendements futurs.",
+        "sources": [
+          "prices_daily.csv : Yahoo Finance via yfinance, extrait le 2026-11-13, colonne adj_close (ajustée dividendes et fractionnements)",
+          "fx_usdcad_daily.csv : Banque du Canada, série FXUSDCAD (CAD pour 1 USD), extrait le 2026-11-13"
+        ]
+      }
+    },
+    "A3": {
+      "id_appel": "A3",
+      "outil": "simuler_modification",
+      "entree": {
+        "persona": "amira",
+        "symbole": "TSLA",
+        "poids_cible_pct": 25
+      },
+      "sortie": {
+        "id_appel": "A3",
+        "persona": "amira",
+        "modification": "TSLA porté à 25.0 % ; les autres positions réduites proportionnellement",
+        "avant": {
+          "poids_pct": {
+            "QQQ": 25,
+            "SPY": 20,
+            "XIU.TO": 15,
+            "NVDA": 8,
+            "SHOP.TO": 7,
+            "CNR.TO": 7,
+            "CSU.TO": 5,
+            "BTC-USD": 5,
+            "GLD": 5,
+            "ETH-USD": 3
+          },
+          "mesures": {
+            "rendement_annualise_pct": 16.9,
+            "rendement_cumule_pct": 119.0,
+            "volatilite_annualisee_pct": 18.5,
+            "perte_maximale_pct": -33.4,
+            "perte_maximale_periode": "2021-11-19 au 2022-10-14",
+            "rendement_2022_pct": -25.8,
+            "pire_semaine_pct": -8.7
+          },
+          "composition": {
+            "nombre_positions": 10,
+            "plus_gros_titre": {
+              "symbole": "NVDA",
+              "poids_pct": 8
+            },
+            "part_crypto_pct": 8,
+            "part_tech_pct": 45,
+            "part_obligations_pct": 0,
+            "part_actions_pct": 87,
+            "part_or_pct": 5,
+            "titres_tres_volatils": {
+              "NVDA": 8,
+              "SHOP.TO": 7,
+              "BTC-USD": 5,
+              "ETH-USD": 3
+            }
+          },
+          "contraintes": {
+            "statut": "conforme",
+            "nombre_ecarts": 0,
+            "regles": [
+              {
+                "regle": "poids_max_titre",
+                "description": "Poids maximal d'un titre individuel ou d'un cryptoactif (les FNB, déjà diversifiés, sont exemptés)",
+                "valeur": 8,
+                "seuil": 15,
+                "respectee": true,
+                "detail": "NVDA",
+                "nature": "hypothèse de l'équipe"
+              },
+              {
+                "regle": "crypto_max",
+                "description": "Part maximale des cryptoactifs",
+                "valeur": 8,
+                "seuil": 10,
+                "respectee": true,
+                "detail": null,
+                "nature": "hypothèse de l'équipe"
+              },
+              {
+                "regle": "tech_max",
+                "description": "Part maximale de la technologie (secteurs Information Technology et Communication Services, et QQQ compté entièrement)",
+                "valeur": 45,
+                "seuil": 50,
+                "respectee": true,
+                "detail": null,
+                "nature": "hypothèse de l'équipe"
+              },
+              {
+                "regle": "lignes_min",
+                "description": "Nombre minimal de positions, pour garder une diversification",
+                "valeur": 10,
+                "seuil": 6,
+                "respectee": true,
+                "detail": null,
+                "nature": "hypothèse de l'équipe"
+              },
+              {
+                "regle": "perte_max",
+                "description": "Pire baisse historique tolérée du portefeuille (perte maximale du sommet au creux)",
+                "valeur": -33.4,
+                "seuil": -45,
+                "respectee": true,
+                "detail": null,
+                "nature": "hypothèse de l'équipe"
+              }
+            ]
+          }
+        },
+        "apres": {
+          "poids_pct": {
+            "QQQ": 18.75,
+            "SPY": 15.0,
+            "XIU.TO": 11.25,
+            "NVDA": 6.0,
+            "SHOP.TO": 5.25,
+            "CNR.TO": 5.25,
+            "CSU.TO": 3.75,
+            "BTC-USD": 3.75,
+            "GLD": 3.75,
+            "ETH-USD": 2.25,
+            "TSLA": 25.0
+          },
+          "mesures": {
+            "rendement_annualise_pct": 16.4,
+            "rendement_cumule_pct": 114.0,
+            "volatilite_annualisee_pct": 24.5,
+            "perte_maximale_pct": -39.3,
+            "perte_maximale_periode": "2021-11-19 au 2023-01-06",
+            "rendement_2022_pct": -36.1,
+            "pire_semaine_pct": -8.9
+          },
+          "composition": {
+            "nombre_positions": 11,
+            "plus_gros_titre": {
+              "symbole": "TSLA",
+              "poids_pct": 25.0
+            },
+            "part_crypto_pct": 6.0,
+            "part_tech_pct": 33.8,
+            "part_obligations_pct": 0,
+            "part_actions_pct": 90.2,
+            "part_or_pct": 3.8,
+            "titres_tres_volatils": {
+              "NVDA": 6.0,
+              "SHOP.TO": 5.2,
+              "BTC-USD": 3.8,
+              "ETH-USD": 2.2,
+              "TSLA": 25.0
+            }
+          },
+          "contraintes": {
+            "statut": "non conforme",
+            "nombre_ecarts": 1,
+            "regles": [
+              {
+                "regle": "poids_max_titre",
+                "description": "Poids maximal d'un titre individuel ou d'un cryptoactif (les FNB, déjà diversifiés, sont exemptés)",
+                "valeur": 25.0,
+                "seuil": 15,
+                "respectee": false,
+                "detail": "TSLA",
+                "nature": "hypothèse de l'équipe"
+              },
+              {
+                "regle": "crypto_max",
+                "description": "Part maximale des cryptoactifs",
+                "valeur": 6.0,
+                "seuil": 10,
+                "respectee": true,
+                "detail": null,
+                "nature": "hypothèse de l'équipe"
+              },
+              {
+                "regle": "tech_max",
+                "description": "Part maximale de la technologie (secteurs Information Technology et Communication Services, et QQQ compté entièrement)",
+                "valeur": 33.8,
+                "seuil": 50,
+                "respectee": true,
+                "detail": null,
+                "nature": "hypothèse de l'équipe"
+              },
+              {
+                "regle": "lignes_min",
+                "description": "Nombre minimal de positions, pour garder une diversification",
+                "valeur": 11,
+                "seuil": 6,
+                "respectee": true,
+                "detail": null,
+                "nature": "hypothèse de l'équipe"
+              },
+              {
+                "regle": "perte_max",
+                "description": "Pire baisse historique tolérée du portefeuille (perte maximale du sommet au creux)",
+                "valeur": -39.3,
+                "seuil": -45,
+                "respectee": true,
+                "detail": null,
+                "nature": "hypothèse de l'équipe"
+              }
+            ]
+          }
+        },
+        "periode": "semaines du 2021-11-19 au 2026-11-13 (261 semaines, dernier prix le 2026-11-12)",
+        "methode": "Prix convertis en CAD (USD x taux Banque du Canada du jour, ou dernier taux connu, jamais un taux futur), prix de fin de semaine (vendredi ou dernier prix connu), rendements hebdomadaires, annualisation sur 52 semaines, portefeuille rééquilibré chaque semaine aux poids indiqués, sans frais ni impôts.",
+        "avertissement": "Simulation historique : les résultats passés ne prédisent pas les résultats futurs.",
+        "sources": [
+          "prices_daily.csv : Yahoo Finance via yfinance, extrait le 2026-11-13, colonne adj_close (ajustée dividendes et fractionnements)",
+          "fx_usdcad_daily.csv : Banque du Canada, série FXUSDCAD (CAD pour 1 USD), extrait le 2026-11-13",
+          "Personas de l'énoncé officiel ; portefeuilles actuels et seuils = hypothèses de l'équipe"
+        ]
+      }
+    },
+    "A4": {
+      "id_appel": "A4",
+      "outil": "simuler_modification",
+      "entree": {
+        "persona": "amira",
+        "poids_cible_pct": 15,
+        "symbole": "TSLA"
+      },
+      "sortie": {
+        "id_appel": "A4",
+        "persona": "amira",
+        "modification": "TSLA porté à 15.0 % ; les autres positions réduites proportionnellement",
+        "avant": {
+          "poids_pct": {
+            "QQQ": 25,
+            "SPY": 20,
+            "XIU.TO": 15,
+            "NVDA": 8,
+            "SHOP.TO": 7,
+            "CNR.TO": 7,
+            "CSU.TO": 5,
+            "BTC-USD": 5,
+            "GLD": 5,
+            "ETH-USD": 3
+          },
+          "mesures": {
+            "rendement_annualise_pct": 16.9,
+            "rendement_cumule_pct": 119.0,
+            "volatilite_annualisee_pct": 18.5,
+            "perte_maximale_pct": -33.4,
+            "perte_maximale_periode": "2021-11-19 au 2022-10-14",
+            "rendement_2022_pct": -25.8,
+            "pire_semaine_pct": -8.7
+          },
+          "composition": {
+            "nombre_positions": 10,
+            "plus_gros_titre": {
+              "symbole": "NVDA",
+              "poids_pct": 8
+            },
+            "part_crypto_pct": 8,
+            "part_tech_pct": 45,
+            "part_obligations_pct": 0,
+            "part_actions_pct": 87,
+            "part_or_pct": 5,
+            "titres_tres_volatils": {
+              "NVDA": 8,
+              "SHOP.TO": 7,
+              "BTC-USD": 5,
+              "ETH-USD": 3
+            }
+          },
+          "contraintes": {
+            "statut": "conforme",
+            "nombre_ecarts": 0,
+            "regles": [
+              {
+                "regle": "poids_max_titre",
+                "description": "Poids maximal d'un titre individuel ou d'un cryptoactif (les FNB, déjà diversifiés, sont exemptés)",
+                "valeur": 8,
+                "seuil": 15,
+                "respectee": true,
+                "detail": "NVDA",
+                "nature": "hypothèse de l'équipe"
+              },
+              {
+                "regle": "crypto_max",
+                "description": "Part maximale des cryptoactifs",
+                "valeur": 8,
+                "seuil": 10,
+                "respectee": true,
+                "detail": null,
+                "nature": "hypothèse de l'équipe"
+              },
+              {
+                "regle": "tech_max",
+                "description": "Part maximale de la technologie (secteurs Information Technology et Communication Services, et QQQ compté entièrement)",
+                "valeur": 45,
+                "seuil": 50,
+                "respectee": true,
+                "detail": null,
+                "nature": "hypothèse de l'équipe"
+              },
+              {
+                "regle": "lignes_min",
+                "description": "Nombre minimal de positions, pour garder une diversification",
+                "valeur": 10,
+                "seuil": 6,
+                "respectee": true,
+                "detail": null,
+                "nature": "hypothèse de l'équipe"
+              },
+              {
+                "regle": "perte_max",
+                "description": "Pire baisse historique tolérée du portefeuille (perte maximale du sommet au creux)",
+                "valeur": -33.4,
+                "seuil": -45,
+                "respectee": true,
+                "detail": null,
+                "nature": "hypothèse de l'équipe"
+              }
+            ]
+          }
+        },
+        "apres": {
+          "poids_pct": {
+            "QQQ": 21.25,
+            "SPY": 17.0,
+            "XIU.TO": 12.75,
+            "NVDA": 6.8,
+            "SHOP.TO": 5.95,
+            "CNR.TO": 5.95,
+            "CSU.TO": 4.25,
+            "BTC-USD": 4.25,
+            "GLD": 4.25,
+            "ETH-USD": 2.55,
+            "TSLA": 15.0
+          },
+          "mesures": {
+            "rendement_annualise_pct": 16.8,
+            "rendement_cumule_pct": 117.8,
+            "volatilite_annualisee_pct": 21.5,
+            "perte_maximale_pct": -34.8,
+            "perte_maximale_periode": "2021-11-19 au 2022-12-30",
+            "rendement_2022_pct": -32.0,
+            "pire_semaine_pct": -8.8
+          },
+          "composition": {
+            "nombre_positions": 11,
+            "plus_gros_titre": {
+              "symbole": "TSLA",
+              "poids_pct": 15.0
+            },
+            "part_crypto_pct": 6.8,
+            "part_tech_pct": 38.2,
+            "part_obligations_pct": 0,
+            "part_actions_pct": 89.0,
+            "part_or_pct": 4.2,
+            "titres_tres_volatils": {
+              "NVDA": 6.8,
+              "SHOP.TO": 6.0,
+              "BTC-USD": 4.2,
+              "ETH-USD": 2.5,
+              "TSLA": 15.0
+            }
+          },
+          "contraintes": {
+            "statut": "conforme",
+            "nombre_ecarts": 0,
+            "regles": [
+              {
+                "regle": "poids_max_titre",
+                "description": "Poids maximal d'un titre individuel ou d'un cryptoactif (les FNB, déjà diversifiés, sont exemptés)",
+                "valeur": 15.0,
+                "seuil": 15,
+                "respectee": true,
+                "detail": "TSLA",
+                "nature": "hypothèse de l'équipe"
+              },
+              {
+                "regle": "crypto_max",
+                "description": "Part maximale des cryptoactifs",
+                "valeur": 6.8,
+                "seuil": 10,
+                "respectee": true,
+                "detail": null,
+                "nature": "hypothèse de l'équipe"
+              },
+              {
+                "regle": "tech_max",
+                "description": "Part maximale de la technologie (secteurs Information Technology et Communication Services, et QQQ compté entièrement)",
+                "valeur": 38.2,
+                "seuil": 50,
+                "respectee": true,
+                "detail": null,
+                "nature": "hypothèse de l'équipe"
+              },
+              {
+                "regle": "lignes_min",
+                "description": "Nombre minimal de positions, pour garder une diversification",
+                "valeur": 11,
+                "seuil": 6,
+                "respectee": true,
+                "detail": null,
+                "nature": "hypothèse de l'équipe"
+              },
+              {
+                "regle": "perte_max",
+                "description": "Pire baisse historique tolérée du portefeuille (perte maximale du sommet au creux)",
+                "valeur": -34.8,
+                "seuil": -45,
+                "respectee": true,
+                "detail": null,
+                "nature": "hypothèse de l'équipe"
+              }
+            ]
+          }
+        },
+        "periode": "semaines du 2021-11-19 au 2026-11-13 (261 semaines, dernier prix le 2026-11-12)",
+        "methode": "Prix convertis en CAD (USD x taux Banque du Canada du jour, ou dernier taux connu, jamais un taux futur), prix de fin de semaine (vendredi ou dernier prix connu), rendements hebdomadaires, annualisation sur 52 semaines, portefeuille rééquilibré chaque semaine aux poids indiqués, sans frais ni impôts.",
+        "avertissement": "Simulation historique : les résultats passés ne prédisent pas les résultats futurs.",
+        "sources": [
+          "prices_daily.csv : Yahoo Finance via yfinance, extrait le 2026-11-13, colonne adj_close (ajustée dividendes et fractionnements)",
+          "fx_usdcad_daily.csv : Banque du Canada, série FXUSDCAD (CAD pour 1 USD), extrait le 2026-11-13",
+          "Personas de l'énoncé officiel ; portefeuilles actuels et seuils = hypothèses de l'équipe"
+        ]
+      }
+    },
+    "A5": {
+      "id_appel": "A5",
+      "outil": "evaluer_portefeuille",
+      "entree": {
+        "persona": "amira",
+        "positions": [
+          {
+            "poids_pct": 4.25,
+            "symbole": "BTC-USD"
+          },
+          {
+            "poids_pct": 5.95,
+            "symbole": "CNR.TO"
+          },
+          {
+            "poids_pct": 4.25,
+            "symbole": "CSU.TO"
+          },
+          {
+            "poids_pct": 2.55,
+            "symbole": "ETH-USD"
+          },
+          {
+            "poids_pct": 4.25,
+            "symbole": "GLD"
+          },
+          {
+            "poids_pct": 6.8,
+            "symbole": "NVDA"
+          },
+          {
+            "poids_pct": 21.25,
+            "symbole": "QQQ"
+          },
+          {
+            "poids_pct": 5.95,
+            "symbole": "SHOP.TO"
+          },
+          {
+            "poids_pct": 17,
+            "symbole": "SPY"
+          },
+          {
+            "poids_pct": 15,
+            "symbole": "TSLA"
+          },
+          {
+            "poids_pct": 12.75,
+            "symbole": "XIU.TO"
+          }
+        ]
+      },
+      "sortie": {
+        "id_appel": "A5",
+        "persona": "amira",
+        "poids_pct": {
+          "BTC-USD": 4.25,
+          "CNR.TO": 5.95,
+          "CSU.TO": 4.25,
+          "ETH-USD": 2.55,
+          "GLD": 4.25,
+          "NVDA": 6.8,
+          "QQQ": 21.25,
+          "SHOP.TO": 5.95,
+          "SPY": 17.0,
+          "TSLA": 15.0,
+          "XIU.TO": 12.75
+        },
+        "note": null,
+        "mesures": {
+          "rendement_annualise_pct": 16.8,
+          "rendement_cumule_pct": 117.8,
+          "volatilite_annualisee_pct": 21.5,
+          "perte_maximale_pct": -34.8,
+          "perte_maximale_periode": "2021-11-19 au 2022-12-30",
+          "rendement_2022_pct": -32.0,
+          "pire_semaine_pct": -8.8
+        },
+        "composition": {
+          "nombre_positions": 11,
+          "plus_gros_titre": {
+            "symbole": "TSLA",
+            "poids_pct": 15.0
+          },
+          "part_crypto_pct": 6.8,
+          "part_tech_pct": 38.2,
+          "part_obligations_pct": 0,
+          "part_actions_pct": 89.0,
+          "part_or_pct": 4.2,
+          "titres_tres_volatils": {
+            "BTC-USD": 4.2,
+            "ETH-USD": 2.5,
+            "NVDA": 6.8,
+            "SHOP.TO": 6.0,
+            "TSLA": 15.0
+          }
+        },
+        "contraintes": {
+          "statut": "conforme",
+          "nombre_ecarts": 0,
+          "regles": [
+            {
+              "regle": "poids_max_titre",
+              "description": "Poids maximal d'un titre individuel ou d'un cryptoactif (les FNB, déjà diversifiés, sont exemptés)",
+              "valeur": 15.0,
+              "seuil": 15,
+              "respectee": true,
+              "detail": "TSLA",
+              "nature": "hypothèse de l'équipe"
+            },
+            {
+              "regle": "crypto_max",
+              "description": "Part maximale des cryptoactifs",
+              "valeur": 6.8,
+              "seuil": 10,
+              "respectee": true,
+              "detail": null,
+              "nature": "hypothèse de l'équipe"
+            },
+            {
+              "regle": "tech_max",
+              "description": "Part maximale de la technologie (secteurs Information Technology et Communication Services, et QQQ compté entièrement)",
+              "valeur": 38.2,
+              "seuil": 50,
+              "respectee": true,
+              "detail": null,
+              "nature": "hypothèse de l'équipe"
+            },
+            {
+              "regle": "lignes_min",
+              "description": "Nombre minimal de positions, pour garder une diversification",
+              "valeur": 11,
+              "seuil": 6,
+              "respectee": true,
+              "detail": null,
+              "nature": "hypothèse de l'équipe"
+            },
+            {
+              "regle": "perte_max",
+              "description": "Pire baisse historique tolérée du portefeuille (perte maximale du sommet au creux)",
+              "valeur": -34.8,
+              "seuil": -45,
+              "respectee": true,
+              "detail": null,
+              "nature": "hypothèse de l'équipe"
+            }
+          ]
+        },
+        "periode": "semaines du 2021-11-19 au 2026-11-13 (261 semaines, dernier prix le 2026-11-12)",
+        "methode": "Prix convertis en CAD (USD x taux Banque du Canada du jour, ou dernier taux connu, jamais un taux futur), prix de fin de semaine (vendredi ou dernier prix connu), rendements hebdomadaires, annualisation sur 52 semaines, portefeuille rééquilibré chaque semaine aux poids indiqués, sans frais ni impôts.",
+        "sources": [
+          "prices_daily.csv : Yahoo Finance via yfinance, extrait le 2026-11-13, colonne adj_close (ajustée dividendes et fractionnements)",
+          "fx_usdcad_daily.csv : Banque du Canada, série FXUSDCAD (CAD pour 1 USD), extrait le 2026-11-13",
+          "Personas de l'énoncé officiel ; portefeuilles actuels et seuils = hypothèses de l'équipe"
+        ]
+      }
+    }
+  },
+  "comparatif": {
+    "lignes": [
+      {
+        "portefeuille": "Actuel",
+        "rendement_annualise_pct": 16.9,
+        "volatilite_annualisee_pct": 18.5,
+        "perte_maximale_pct": -33.4,
+        "rendement_2022_pct": -25.8,
+        "regles_respectees": "5/5",
+        "ecarts": []
+      },
+      {
+        "portefeuille": "Demande",
+        "rendement_annualise_pct": 16.4,
+        "volatilite_annualisee_pct": 24.5,
+        "perte_maximale_pct": -39.3,
+        "rendement_2022_pct": -36.1,
+        "regles_respectees": "4/5",
+        "ecarts": [
+          "poids d'un titre"
+        ]
+      },
+      {
+        "portefeuille": "Alternative",
+        "rendement_annualise_pct": 16.8,
+        "volatilite_annualisee_pct": 21.5,
+        "perte_maximale_pct": -34.8,
+        "rendement_2022_pct": -32.0,
+        "regles_respectees": "5/5",
+        "ecarts": []
+      }
+    ],
+    "graphique_png": "iVBORw0KGgoAAAANSUhEUgAABBAAAAGTCAYAAACReeEhAAAAOnRFWHRTb2Z0d2FyZQBNYXRwbG90bGliIHZlcnNpb24zLjExLjIsIGh0dHBzOi8vbWF0cGxvdGxpYi5vcmcvgI3uAAAAAAlwSFlzAAAT/gAAE/4BB5Q5hAAA8cRJREFUeJzs3QV0FOfXBvAn7q7EDQuWBHfX4lJKaUtbaEu9/7q3X92V0pa2lBqF4u7ubkGSkIS4u/t33nfZ2WyEJJAAIc/vnD0Z29lZSbJz57736lRUVFSAiIiIiIiIiOgadK+1koiIiIiIiIiIAQQiIiIiIiIiqhdmIBARERERERFRnRhAICIiIiIiIqI6MYBARERERERERHViAIGIiIiIiIiI6sQAAhERERERERHViQEEIiIiIiIiIqoTAwhEREREREREVCcGEIiIiIiIiIioTgwgEBEREREREVGdGEAgIiIiIiIiojoxgEBEREREREREdWIAgYiIiIiIiIjqxAACEREREREREdWJAQQiIiIiIiIiqhMDCERERERERERUJwYQiIiIiIiIiKhODCAQERERERERUZ0YQCAiIiIiIiKiOjGAQERERERERER1YgCBiIiIiIiIiOrEAAIRERERERER1YkBBGqwiIgImJiYwMbGBjk5Obf1K7hp0yYYGxvLY6brd/DgQfk6qm/W1tbw9fXFxIkTsWjRIhQXF9/RL+9rr70GPz+/W30YLdLPP/8sP3OjR49uMb/j//vf/9ChQ4dbfRhERERE1TCAQA32559/ory8HJmZmVi2bNl1vYKrVq2SX/qjoqKa9B0oKytDUVGRPF66fuL1E6/jL7/8It/3mJgYeeI2fPhweXLdvXt3JCYm3rEvcUlJCQoLC2/1YbRIv//+OyoqKrB161b5uavrd/xm/W1pDI8//ji6dOlS4+dNPCciIiKi2w0DCNQg4ov8X3/9hfHjx6Nr1674448/rusVVH/pF/uj5sPAwECenFlYWKBNmzZ48sknceTIEcTFxeG+++671YdHd5iQkBD5+XrnnXego6ODv//++47621JboOCbb77BhQsXbskxEREREV0LAwjUIPv27ZOpwtOnT8c999wj5yMjI6ttl5KSgqefflqmudva2mLAgAHYtm2bXCcCEPfee6+cbtu2rZIWn5aWJr84m5ubV9vfSy+9JLet+hji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R3Yx1CU9LGl7Yp2FCxfKOw+iC5no2SCG3NSvX1/2oPH09OSXRIWIpFois/xbb70l9738nnvuOZktWWfy5MlyHxs3bpzsrigy0b/55puYPXv2fbVXMEmts7OzrBgya9YsflNklNjf5s6diz59+sj9KT/xG9+vXz/99JIlS+Rv9/Dhw+UxUey74txg69at+ru2JW1P7OOiPVHZRhxLRUI6cbdMtC2O26J8GVFBorfgjRs38O677xb6DRbnqCLTvI5IxCn2KXF8FUkQRa9XkUju008/va/2PvnkE7nfiuFgIqGoKI0nejaKITpFZcCn8iskJESeL4pqCqLHQMHhL/mHFYpk3eJaSyRMHDZsGC5fvozt27fL4YpiKFhp2xNE1RDR+1b0+v7pp58e+ftlAKEcOHz4sOymZYzYMb/++muDeaIb4po1a+QFlDiBHTx4sEE25pK2V9rXJRLEyaQooWSMOHkdM2aMwbygoCA55ksckMWPvyi1lP9ktDTtiQOwLmgmutWK9vKXdiIqSJxkipNVY8QwBHGSkJ84Lu7bt08OiREnrG3atHmg9nREDgSRHVy0qTsBISpo/vz5RnPHCOJktWDX1+vXr8vjqxhb27RpUxkQyD9evDTtiXMKEdwVx1eRv0MEdJs0acIviYo0depUGWw1RvzWi4B/fuLYKvJtiXMAcRwUOWQepD3RzVwMexTHZN3+z2AXGSOOa6JqUlFEydqKFSvqp3NycrBu3TpZnUYcD8UQb5Fj437bExXGRD6PN954Q964fdQYQCAiIiIiIiKiYjGJIhEREREREREViwEEIiIiIiIiIioWAwhEREREREREVCwGEIiIiIiIiIioWAwgEBEREREREVGxGEAgIiIiIiIiomIxgEBERERERERExWIAgYiIiIiIiIiKxQACERERERERERWLAQQiIiIiIiIiKhYDCERERERERERULAYQiIiIiIiIiKhYDCAQERERERERUbEYQCAiIiIiIiKiYjGAQERERERERETFYgCBiIiIiIiIiIrFAAIRERERERERFYsBBCIiIiIiIiIqFgMIRERERERERFQsBhCIiIiIiIiICMX5f7L+zp5ksNwNAAAAAElFTkSuQmCC"
+  },
+  "trace": {
+    "id": "20261114_165633_023",
+    "horodatage_utc": "2026-11-14T21:56:33+00:00",
+    "modele": "global.anthropic.claude-sonnet-5",
+    "persona": "amira",
+    "demande": "Tesla est partout dans les nouvelles, je veux y mettre 25 % de mon épargne.",
+    "etapes": [
+      {
+        "type": "modele",
+        "duree_s": 1.83,
+        "request_id": "d36f6af7-7e0d-43a7-8e80-db6324a7416b",
+        "texte": ""
+      },
+      {
+        "type": "outil",
+        "id_appel": "A1",
+        "outil": "profil_investisseur",
+        "entree": {
+          "persona": "amira"
+        },
+        "duree_s": 0.0,
+        "sortie": {
+          "id_appel": "A1",
+          "faits_de_l_enonce": {
+            "nom": "Amira",
+            "age": 26,
+            "situation": "Ingénieure logicielle, célibataire, sans enfant",
+            "experience": "intermédiaire",
+            "profil_risque": "élevé",
+            "horizon": "15 ans ou plus",
+            "objectif": "Faire croître son capital à long terme",
+            "preferences": [
+              "Très intéressée par l'IA, les technologies émergentes et les entreprises en forte croissance",
+              "Accepte une volatilité importante, intéressée par les cryptoactifs",
+              "Veut garder une certaine diversification et éviter de miser exclusivement sur la technologie"
+            ],
+            "test_central": "Un profil offensif n'autorise pas une concentration ou un risque sans limites."
+          },
+          "hypotheses_de_l_equipe": {
+            "portefeuille_actuel_fictif_pct": {
+              "QQQ": 25,
+              "SPY": 20,
+              "XIU.TO": 15,
+              "NVDA": 8,
+              "SHOP.TO": 7,
+              "CNR.TO": 7,
+              "CSU.TO": 5,
+              "BTC-USD": 5,
+              "GLD": 5,
+              "ETH-USD": 3
+            },
+            "regles": [
+              {
+                "regle": "poids_max_titre",
+                "seuil": 15,
+                "description": "Poids maximal d'un titre individuel ou d'un cryptoactif (les FNB, déjà diversifiés, sont exemptés)"
+              },
+              {
+                "regle": "crypto_max",
+                "seuil": 10,
+                "description": "Part maximale des cryptoactifs"
+              },
+              {
+                "regle": "tech_max",
+                "seuil": 50,
+                "description": "Part maximale de la technologie (secteurs Information Technology et Communication Services, et QQQ compté entièrement)"
+              },
+              {
+                "regle": "lignes_min",
+                "seuil": 6,
+                "description": "Nombre minimal de positions, pour garder une diversification"
+              },
+              {
+                "regle": "perte_max",
+                "seuil": -45,
+                "description": "Pire baisse historique tolérée du portefeuille (perte maximale du sommet au creux)"
+              }
+            ]
+          },
+          "source": "Personas de l'énoncé officiel ; portefeuilles actuels et seuils = hypothèses de l'équipe"
+        }
+      },
+      {
+        "type": "outil",
+        "id_appel": "A2",
+        "outil": "indicateurs_actif",
+        "entree": {
+          "symbole": "TSLA"
+        },
+        "duree_s": 0.003,
+        "sortie": {
+          "id_appel": "A2",
+          "symbole": "TSLA",
+          "nom": "Tesla",
+          "classe": "equity",
+          "secteur": "Consumer Discretionary",
+          "devise_de_cotation": "USD",
+          "devise_d_analyse": "CAD",
+          "rendement_annualise_pct": 5.5,
+          "rendement_cumule_pct": 30.9,
+          "volatilite_annualisee_pct": 55.8,
+          "perte_maximale_pct": -68.2,
+          "perte_maximale_periode": "2021-11-19 au 2023-01-06",
+          "rendement_2022_pct": -62.6,
+          "pire_semaine_pct": -18.5,
+          "periode": "semaines du 2021-11-19 au 2026-11-13 (261 semaines, dernier prix le 2026-11-12)",
+          "methode": "Prix convertis en CAD (USD x taux Banque du Canada du jour, ou dernier taux connu, jamais un taux futur), prix de fin de semaine (vendredi ou dernier prix connu), rendements hebdomadaires, annualisation sur 52 semaines, portefeuille rééquilibré chaque semaine aux poids indiqués, sans frais ni impôts.",
+          "avertissement": "Indicateurs historiques : ils ne prédisent pas les rendements futurs.",
+          "sources": [
+            "prices_daily.csv : Yahoo Finance via yfinance, extrait le 2026-11-13, colonne adj_close (ajustée dividendes et fractionnements)",
+            "fx_usdcad_daily.csv : Banque du Canada, série FXUSDCAD (CAD pour 1 USD), extrait le 2026-11-13"
+          ]
+        }
+      },
+      {
+        "type": "modele",
+        "duree_s": 1.94,
+        "request_id": "6e4b4b66-9e99-4399-8830-a2ccd88c41d4",
+        "texte": ""
+      },
+      {
+        "type": "outil",
+        "id_appel": "A3",
+        "outil": "simuler_modification",
+        "entree": {
+          "persona": "amira",
+          "symbole": "TSLA",
+          "poids_cible_pct": 25
+        },
+        "duree_s": 0.005,
+        "sortie": {
+          "id_appel": "A3",
+          "persona": "amira",
+          "modification": "TSLA porté à 25.0 % ; les autres positions réduites proportionnellement",
+          "avant": {
+            "poids_pct": {
+              "QQQ": 25,
+              "SPY": 20,
+              "XIU.TO": 15,
+              "NVDA": 8,
+              "SHOP.TO": 7,
+              "CNR.TO": 7,
+              "CSU.TO": 5,
+              "BTC-USD": 5,
+              "GLD": 5,
+              "ETH-USD": 3
+            },
+            "mesures": {
+              "rendement_annualise_pct": 16.9,
+              "rendement_cumule_pct": 119.0,
+              "volatilite_annualisee_pct": 18.5,
+              "perte_maximale_pct": -33.4,
+              "perte_maximale_periode": "2021-11-19 au 2022-10-14",
+              "rendement_2022_pct": -25.8,
+              "pire_semaine_pct": -8.7
+            },
+            "composition": {
+              "nombre_positions": 10,
+              "plus_gros_titre": {
+                "symbole": "NVDA",
+                "poids_pct": 8
+              },
+              "part_crypto_pct": 8,
+              "part_tech_pct": 45,
+              "part_obligations_pct": 0,
+              "part_actions_pct": 87,
+              "part_or_pct": 5,
+              "titres_tres_volatils": {
+                "NVDA": 8,
+                "SHOP.TO": 7,
+                "BTC-USD": 5,
+                "ETH-USD": 3
+              }
+            },
+            "contraintes": {
+              "statut": "conforme",
+              "nombre_ecarts": 0,
+              "regles": [
+                {
+                  "regle": "poids_max_titre",
+                  "description": "Poids maximal d'un titre individuel ou d'un cryptoactif (les FNB, déjà diversifiés, sont exemptés)",
+                  "valeur": 8,
+                  "seuil": 15,
+                  "respectee": true,
+                  "detail": "NVDA",
+                  "nature": "hypothèse de l'équipe"
+                },
+                {
+                  "regle": "crypto_max",
+                  "description": "Part maximale des cryptoactifs",
+                  "valeur": 8,
+                  "seuil": 10,
+                  "respectee": true,
+                  "detail": null,
+                  "nature": "hypothèse de l'équipe"
+                },
+                {
+                  "regle": "tech_max",
+                  "description": "Part maximale de la technologie (secteurs Information Technology et Communication Services, et QQQ compté entièrement)",
+                  "valeur": 45,
+                  "seuil": 50,
+                  "respectee": true,
+                  "detail": null,
+                  "nature": "hypothèse de l'équipe"
+                },
+                {
+                  "regle": "lignes_min",
+                  "description": "Nombre minimal de positions, pour garder une diversification",
+                  "valeur": 10,
+                  "seuil": 6,
+                  "respectee": true,
+                  "detail": null,
+                  "nature": "hypothèse de l'équipe"
+                },
+                {
+                  "regle": "perte_max",
+                  "description": "Pire baisse historique tolérée du portefeuille (perte maximale du sommet au creux)",
+                  "valeur": -33.4,
+                  "seuil": -45,
+                  "respectee": true,
+                  "detail": null,
+                  "nature": "hypothèse de l'équipe"
+                }
+              ]
+            }
+          },
+          "apres": {
+            "poids_pct": {
+              "QQQ": 18.75,
+              "SPY": 15.0,
+              "XIU.TO": 11.25,
+              "NVDA": 6.0,
+              "SHOP.TO": 5.25,
+              "CNR.TO": 5.25,
+              "CSU.TO": 3.75,
+              "BTC-USD": 3.75,
+              "GLD": 3.75,
+              "ETH-USD": 2.25,
+              "TSLA": 25.0
+            },
+            "mesures": {
+              "rendement_annualise_pct": 16.4,
+              "rendement_cumule_pct": 114.0,
+              "volatilite_annualisee_pct": 24.5,
+              "perte_maximale_pct": -39.3,
+              "perte_maximale_periode": "2021-11-19 au 2023-01-06",
+              "rendement_2022_pct": -36.1,
+              "pire_semaine_pct": -8.9
+            },
+            "composition": {
+              "nombre_positions": 11,
+              "plus_gros_titre": {
+                "symbole": "TSLA",
+                "poids_pct": 25.0
+              },
+              "part_crypto_pct": 6.0,
+              "part_tech_pct": 33.8,
+              "part_obligations_pct": 0,
+              "part_actions_pct": 90.2,
+              "part_or_pct": 3.8,
+              "titres_tres_volatils": {
+                "NVDA": 6.0,
+                "SHOP.TO": 5.2,
+                "BTC-USD": 3.8,
+                "ETH-USD": 2.2,
+                "TSLA": 25.0
+              }
+            },
+            "contraintes": {
+              "statut": "non conforme",
+              "nombre_ecarts": 1,
+              "regles": [
+                {
+                  "regle": "poids_max_titre",
+                  "description": "Poids maximal d'un titre individuel ou d'un cryptoactif (les FNB, déjà diversifiés, sont exemptés)",
+                  "valeur": 25.0,
+                  "seuil": 15,
+                  "respectee": false,
+                  "detail": "TSLA",
+                  "nature": "hypothèse de l'équipe"
+                },
+                {
+                  "regle": "crypto_max",
+                  "description": "Part maximale des cryptoactifs",
+                  "valeur": 6.0,
+                  "seuil": 10,
+                  "respectee": true,
+                  "detail": null,
+                  "nature": "hypothèse de l'équipe"
+                },
+                {
+                  "regle": "tech_max",
+                  "description": "Part maximale de la technologie (secteurs Information Technology et Communication Services, et QQQ compté entièrement)",
+                  "valeur": 33.8,
+                  "seuil": 50,
+                  "respectee": true,
+                  "detail": null,
+                  "nature": "hypothèse de l'équipe"
+                },
+                {
+                  "regle": "lignes_min",
+                  "description": "Nombre minimal de positions, pour garder une diversification",
+                  "valeur": 11,
+                  "seuil": 6,
+                  "respectee": true,
+                  "detail": null,
+                  "nature": "hypothèse de l'équipe"
+                },
+                {
+                  "regle": "perte_max",
+                  "description": "Pire baisse historique tolérée du portefeuille (perte maximale du sommet au creux)",
+                  "valeur": -39.3,
+                  "seuil": -45,
+                  "respectee": true,
+                  "detail": null,
+                  "nature": "hypothèse de l'équipe"
+                }
+              ]
+            }
+          },
+          "periode": "semaines du 2021-11-19 au 2026-11-13 (261 semaines, dernier prix le 2026-11-12)",
+          "methode": "Prix convertis en CAD (USD x taux Banque du Canada du jour, ou dernier taux connu, jamais un taux futur), prix de fin de semaine (vendredi ou dernier prix connu), rendements hebdomadaires, annualisation sur 52 semaines, portefeuille rééquilibré chaque semaine aux poids indiqués, sans frais ni impôts.",
+          "avertissement": "Simulation historique : les résultats passés ne prédisent pas les résultats futurs.",
+          "sources": [
+            "prices_daily.csv : Yahoo Finance via yfinance, extrait le 2026-11-13, colonne adj_close (ajustée dividendes et fractionnements)",
+            "fx_usdcad_daily.csv : Banque du Canada, série FXUSDCAD (CAD pour 1 USD), extrait le 2026-11-13",
+            "Personas de l'énoncé officiel ; portefeuilles actuels et seuils = hypothèses de l'équipe"
+          ]
+        }
+      },
+      {
+        "type": "modele",
+        "duree_s": 2.66,
+        "request_id": "22fe14b1-35fb-4ea0-9cd6-378079b78a23",
+        "texte": ""
+      },
+      {
+        "type": "outil",
+        "id_appel": "A4",
+        "outil": "simuler_modification",
+        "entree": {
+          "persona": "amira",
+          "poids_cible_pct": 15,
+          "symbole": "TSLA"
+        },
+        "duree_s": 0.006,
+        "sortie": {
+          "id_appel": "A4",
+          "persona": "amira",
+          "modification": "TSLA porté à 15.0 % ; les autres positions réduites proportionnellement",
+          "avant": {
+            "poids_pct": {
+              "QQQ": 25,
+              "SPY": 20,
+              "XIU.TO": 15,
+              "NVDA": 8,
+              "SHOP.TO": 7,
+              "CNR.TO": 7,
+              "CSU.TO": 5,
+              "BTC-USD": 5,
+              "GLD": 5,
+              "ETH-USD": 3
+            },
+            "mesures": {
+              "rendement_annualise_pct": 16.9,
+              "rendement_cumule_pct": 119.0,
+              "volatilite_annualisee_pct": 18.5,
+              "perte_maximale_pct": -33.4,
+              "perte_maximale_periode": "2021-11-19 au 2022-10-14",
+              "rendement_2022_pct": -25.8,
+              "pire_semaine_pct": -8.7
+            },
+            "composition": {
+              "nombre_positions": 10,
+              "plus_gros_titre": {
+                "symbole": "NVDA",
+                "poids_pct": 8
+              },
+              "part_crypto_pct": 8,
+              "part_tech_pct": 45,
+              "part_obligations_pct": 0,
+              "part_actions_pct": 87,
+              "part_or_pct": 5,
+              "titres_tres_volatils": {
+                "NVDA": 8,
+                "SHOP.TO": 7,
+                "BTC-USD": 5,
+                "ETH-USD": 3
+              }
+            },
+            "contraintes": {
+              "statut": "conforme",
+              "nombre_ecarts": 0,
+              "regles": [
+                {
+                  "regle": "poids_max_titre",
+                  "description": "Poids maximal d'un titre individuel ou d'un cryptoactif (les FNB, déjà diversifiés, sont exemptés)",
+                  "valeur": 8,
+                  "seuil": 15,
+                  "respectee": true,
+                  "detail": "NVDA",
+                  "nature": "hypothèse de l'équipe"
+                },
+                {
+                  "regle": "crypto_max",
+                  "description": "Part maximale des cryptoactifs",
+                  "valeur": 8,
+                  "seuil": 10,
+                  "respectee": true,
+                  "detail": null,
+                  "nature": "hypothèse de l'équipe"
+                },
+                {
+                  "regle": "tech_max",
+                  "description": "Part maximale de la technologie (secteurs Information Technology et Communication Services, et QQQ compté entièrement)",
+                  "valeur": 45,
+                  "seuil": 50,
+                  "respectee": true,
+                  "detail": null,
+                  "nature": "hypothèse de l'équipe"
+                },
+                {
+                  "regle": "lignes_min",
+                  "description": "Nombre minimal de positions, pour garder une diversification",
+                  "valeur": 10,
+                  "seuil": 6,
+                  "respectee": true,
+                  "detail": null,
+                  "nature": "hypothèse de l'équipe"
+                },
+                {
+                  "regle": "perte_max",
+                  "description": "Pire baisse historique tolérée du portefeuille (perte maximale du sommet au creux)",
+                  "valeur": -33.4,
+                  "seuil": -45,
+                  "respectee": true,
+                  "detail": null,
+                  "nature": "hypothèse de l'équipe"
+                }
+              ]
+            }
+          },
+          "apres": {
+            "poids_pct": {
+              "QQQ": 21.25,
+              "SPY": 17.0,
+              "XIU.TO": 12.75,
+              "NVDA": 6.8,
+              "SHOP.TO": 5.95,
+              "CNR.TO": 5.95,
+              "CSU.TO": 4.25,
+              "BTC-USD": 4.25,
+              "GLD": 4.25,
+              "ETH-USD": 2.55,
+              "TSLA": 15.0
+            },
+            "mesures": {
+              "rendement_annualise_pct": 16.8,
+              "rendement_cumule_pct": 117.8,
+              "volatilite_annualisee_pct": 21.5,
+              "perte_maximale_pct": -34.8,
+              "perte_maximale_periode": "2021-11-19 au 2022-12-30",
+              "rendement_2022_pct": -32.0,
+              "pire_semaine_pct": -8.8
+            },
+            "composition": {
+              "nombre_positions": 11,
+              "plus_gros_titre": {
+                "symbole": "TSLA",
+                "poids_pct": 15.0
+              },
+              "part_crypto_pct": 6.8,
+              "part_tech_pct": 38.2,
+              "part_obligations_pct": 0,
+              "part_actions_pct": 89.0,
+              "part_or_pct": 4.2,
+              "titres_tres_volatils": {
+                "NVDA": 6.8,
+                "SHOP.TO": 6.0,
+                "BTC-USD": 4.2,
+                "ETH-USD": 2.5,
+                "TSLA": 15.0
+              }
+            },
+            "contraintes": {
+              "statut": "conforme",
+              "nombre_ecarts": 0,
+              "regles": [
+                {
+                  "regle": "poids_max_titre",
+                  "description": "Poids maximal d'un titre individuel ou d'un cryptoactif (les FNB, déjà diversifiés, sont exemptés)",
+                  "valeur": 15.0,
+                  "seuil": 15,
+                  "respectee": true,
+                  "detail": "TSLA",
+                  "nature": "hypothèse de l'équipe"
+                },
+                {
+                  "regle": "crypto_max",
+                  "description": "Part maximale des cryptoactifs",
+                  "valeur": 6.8,
+                  "seuil": 10,
+                  "respectee": true,
+                  "detail": null,
+                  "nature": "hypothèse de l'équipe"
+                },
+                {
+                  "regle": "tech_max",
+                  "description": "Part maximale de la technologie (secteurs Information Technology et Communication Services, et QQQ compté entièrement)",
+                  "valeur": 38.2,
+                  "seuil": 50,
+                  "respectee": true,
+                  "detail": null,
+                  "nature": "hypothèse de l'équipe"
+                },
+                {
+                  "regle": "lignes_min",
+                  "description": "Nombre minimal de positions, pour garder une diversification",
+                  "valeur": 11,
+                  "seuil": 6,
+                  "respectee": true,
+                  "detail": null,
+                  "nature": "hypothèse de l'équipe"
+                },
+                {
+                  "regle": "perte_max",
+                  "description": "Pire baisse historique tolérée du portefeuille (perte maximale du sommet au creux)",
+                  "valeur": -34.8,
+                  "seuil": -45,
+                  "respectee": true,
+                  "detail": null,
+                  "nature": "hypothèse de l'équipe"
+                }
+              ]
+            }
+          },
+          "periode": "semaines du 2021-11-19 au 2026-11-13 (261 semaines, dernier prix le 2026-11-12)",
+          "methode": "Prix convertis en CAD (USD x taux Banque du Canada du jour, ou dernier taux connu, jamais un taux futur), prix de fin de semaine (vendredi ou dernier prix connu), rendements hebdomadaires, annualisation sur 52 semaines, portefeuille rééquilibré chaque semaine aux poids indiqués, sans frais ni impôts.",
+          "avertissement": "Simulation historique : les résultats passés ne prédisent pas les résultats futurs.",
+          "sources": [
+            "prices_daily.csv : Yahoo Finance via yfinance, extrait le 2026-11-13, colonne adj_close (ajustée dividendes et fractionnements)",
+            "fx_usdcad_daily.csv : Banque du Canada, série FXUSDCAD (CAD pour 1 USD), extrait le 2026-11-13",
+            "Personas de l'énoncé officiel ; portefeuilles actuels et seuils = hypothèses de l'équipe"
+          ]
+        }
+      },
+      {
+        "type": "modele",
+        "duree_s": 14.75,
+        "request_id": "215da0e2-184f-4e8f-96a2-4cf423449acc",
+        "texte": "Ceci est conforme. C'est l'alternative que je vais proposer. Pas besoin d'ESG ici (pas de préférence ESG mentionnée pour Tesla)."
+      },
+      {
+        "type": "controle",
+        "avis_propose": {
+          "verdict": "incohérent",
+          "resume": "Mettre 25 % de votre épargne dans Tesla dépasse la limite de concentration fixée pour un titre individuel (15 %) et ferait grimper la perte historique maximale du portefeuille à -39,3 %, proche du plafond de -45 % que vous tolérez. Une position Tesla à 15 % reste conforme à toutes vos règles tout en gardant une bonne exposition à la croissance technologique. Rappel : les chiffres historiques ne garantissent rien pour l'avenir.",
+          "faits": [
+            {
+              "affirmation": "Portefeuille actuel conforme à toutes les règles, avec une perte historique maximale de référence",
+              "valeur": "-33,4 %",
+              "id_appel": "A3"
+            },
+            {
+              "affirmation": "Avec TSLA à 25 %, le poids maximal autorisé pour un titre (15 %) est dépassé",
+              "valeur": "25,0 % vs seuil 15 %",
+              "id_appel": "A3"
+            },
+            {
+              "affirmation": "Avec TSLA à 25 %, la perte historique maximale du portefeuille s'aggrave",
+              "valeur": "-39,3 %",
+              "id_appel": "A3"
+            },
+            {
+              "affirmation": "Tesla seul a connu une perte historique très sévère",
+              "valeur": "-68,2 % (2021-11-19 à 2023-01-06)",
+              "id_appel": "A2"
+            },
+            {
+              "affirmation": "Avec TSLA ramené à 15 %, toutes les règles sont respectées et la perte max reste sous le seuil",
+              "valeur": "-34,8 % (seuil -45 %)",
+              "id_appel": "A4"
+            }
+          ],
+          "tensions_avec_profil": [
+            "Le profil d'Amira accepte un risque élevé, mais exige explicitement d'éviter la concentration (règle poids_max_titre = 15 %) : 25 % sur TSLA viole cette règle.",
+            "Le profil mentionne vouloir 'garder une certaine diversification et éviter de miser exclusivement sur la technologie' ; à 25 %, TSLA devient le plus gros titre du portefeuille, loin devant toute autre position (NVDA à 8 % avant)."
+          ],
+          "hypotheses": [
+            "Le seuil de 15 % par titre individuel est une hypothèse de l'équipe, pas une règle légale.",
+            "On suppose qu'Amira veut financer cette position en réduisant proportionnellement ses autres positions existantes.",
+            "Le poids de 25 % demandé est pris tel quel comme hypothèse de calcul (aucune autre précision donnée)."
+          ],
+          "limites": [
+            "Les indicateurs (rendement, volatilité, perte max) sont historiques (2021-2026) et ne prédisent pas l'avenir.",
+            "Aucune preuve ESG n'a été demandée ni vérifiée ici, car la demande ne porte pas sur ce critère.",
+            "La simulation ne tient pas compte de frais, d'impôts ou de rééquilibrage réel du portefeuille."
+          ],
+          "alternative": {
+            "description": "Porter TSLA à 15 % (le maximum autorisé par la règle de concentration) plutôt qu'à 25 %, en réduisant proportionnellement les autres positions.",
+            "positions": [
+              {
+                "symbole": "BTC-USD",
+                "poids_pct": 4.25
+              },
+              {
+                "symbole": "CNR.TO",
+                "poids_pct": 5.95
+              },
+              {
+                "symbole": "CSU.TO",
+                "poids_pct": 4.25
+              },
+              {
+                "symbole": "ETH-USD",
+                "poids_pct": 2.55
+              },
+              {
+                "symbole": "GLD",
+                "poids_pct": 4.25
+              },
+              {
+                "symbole": "NVDA",
+                "poids_pct": 6.8
+              },
+              {
+                "symbole": "QQQ",
+                "poids_pct": 21.25
+              },
+              {
+                "symbole": "SHOP.TO",
+                "poids_pct": 5.95
+              },
+              {
+                "symbole": "SPY",
+                "poids_pct": 17.0
+              },
+              {
+                "symbole": "TSLA",
+                "poids_pct": 15.0
+              },
+              {
+                "symbole": "XIU.TO",
+                "poids_pct": 12.75
+              }
+            ],
+            "id_appel_verification": "A4"
+          }
+        },
+        "controles": [
+          {
+            "controle": "Au moins deux faits chiffrés",
+            "ok": true,
+            "detail": "5 fait(s)"
+          },
+          {
+            "controle": "Valeur « -33,4 % » (A3, simuler_modification)",
+            "ok": true,
+            "detail": "retrouvé dans la sortie de l'outil"
+          },
+          {
+            "controle": "Valeur « 25,0 % vs seuil 15 % » (A3, simuler_modification)",
+            "ok": true,
+            "detail": "retrouvé dans la sortie de l'outil"
+          },
+          {
+            "controle": "Valeur « -39,3 % » (A3, simuler_modification)",
+            "ok": true,
+            "detail": "retrouvé dans la sortie de l'outil"
+          },
+          {
+            "controle": "Valeur « -68,2 % (2021-11-19 à 2023-01-06) » (A2, indicateurs_actif)",
+            "ok": true,
+            "detail": "retrouvé dans la sortie de l'outil"
+          },
+          {
+            "controle": "Valeur « -34,8 % (seuil -45 %) » (A4, simuler_modification)",
+            "ok": true,
+            "detail": "retrouvé dans la sortie de l'outil"
+          },
+          {
+            "controle": "Alternative vérifiée par evaluer_portefeuille",
+            "ok": false,
+            "detail": "appel de vérification introuvable"
+          },
+          {
+            "controle": "Limites et incertitudes indiquées",
+            "ok": true,
+            "detail": "3 limite(s)"
+          }
+        ]
+      },
+      {
+        "type": "modele",
+        "duree_s": 3.88,
+        "request_id": "dedede8e-182e-4769-8c14-e7d80230d957",
+        "texte": "Je dois d'abord vérifier l'alternative avec `evaluer_portefeuille` (et non `simuler_modification`) avant de la proposer."
+      },
+      {
+        "type": "outil",
+        "id_appel": "A5",
+        "outil": "evaluer_portefeuille",
+        "entree": {
+          "persona": "amira",
+          "positions": [
+            {
+              "poids_pct": 4.25,
+              "symbole": "BTC-USD"
+            },
+            {
+              "poids_pct": 5.95,
+              "symbole": "CNR.TO"
+            },
+            {
+              "poids_pct": 4.25,
+              "symbole": "CSU.TO"
+            },
+            {
+              "poids_pct": 2.55,
+              "symbole": "ETH-USD"
+            },
+            {
+              "poids_pct": 4.25,
+              "symbole": "GLD"
+            },
+            {
+              "poids_pct": 6.8,
+              "symbole": "NVDA"
+            },
+            {
+              "poids_pct": 21.25,
+              "symbole": "QQQ"
+            },
+            {
+              "poids_pct": 5.95,
+              "symbole": "SHOP.TO"
+            },
+            {
+              "poids_pct": 17,
+              "symbole": "SPY"
+            },
+            {
+              "poids_pct": 15,
+              "symbole": "TSLA"
+            },
+            {
+              "poids_pct": 12.75,
+              "symbole": "XIU.TO"
+            }
+          ]
+        },
+        "duree_s": 0.005,
+        "sortie": {
+          "id_appel": "A5",
+          "persona": "amira",
+          "poids_pct": {
+            "BTC-USD": 4.25,
+            "CNR.TO": 5.95,
+            "CSU.TO": 4.25,
+            "ETH-USD": 2.55,
+            "GLD": 4.25,
+            "NVDA": 6.8,
+            "QQQ": 21.25,
+            "SHOP.TO": 5.95,
+            "SPY": 17.0,
+            "TSLA": 15.0,
+            "XIU.TO": 12.75
+          },
+          "note": null,
+          "mesures": {
+            "rendement_annualise_pct": 16.8,
+            "rendement_cumule_pct": 117.8,
+            "volatilite_annualisee_pct": 21.5,
+            "perte_maximale_pct": -34.8,
+            "perte_maximale_periode": "2021-11-19 au 2022-12-30",
+            "rendement_2022_pct": -32.0,
+            "pire_semaine_pct": -8.8
+          },
+          "composition": {
+            "nombre_positions": 11,
+            "plus_gros_titre": {
+              "symbole": "TSLA",
+              "poids_pct": 15.0
+            },
+            "part_crypto_pct": 6.8,
+            "part_tech_pct": 38.2,
+            "part_obligations_pct": 0,
+            "part_actions_pct": 89.0,
+            "part_or_pct": 4.2,
+            "titres_tres_volatils": {
+              "BTC-USD": 4.2,
+              "ETH-USD": 2.5,
+              "NVDA": 6.8,
+              "SHOP.TO": 6.0,
+              "TSLA": 15.0
+            }
+          },
+          "contraintes": {
+            "statut": "conforme",
+            "nombre_ecarts": 0,
+            "regles": [
+              {
+                "regle": "poids_max_titre",
+                "description": "Poids maximal d'un titre individuel ou d'un cryptoactif (les FNB, déjà diversifiés, sont exemptés)",
+                "valeur": 15.0,
+                "seuil": 15,
+                "respectee": true,
+                "detail": "TSLA",
+                "nature": "hypothèse de l'équipe"
+              },
+              {
+                "regle": "crypto_max",
+                "description": "Part maximale des cryptoactifs",
+                "valeur": 6.8,
+                "seuil": 10,
+                "respectee": true,
+                "detail": null,
+                "nature": "hypothèse de l'équipe"
+              },
+              {
+                "regle": "tech_max",
+                "description": "Part maximale de la technologie (secteurs Information Technology et Communication Services, et QQQ compté entièrement)",
+                "valeur": 38.2,
+                "seuil": 50,
+                "respectee": true,
+                "detail": null,
+                "nature": "hypothèse de l'équipe"
+              },
+              {
+                "regle": "lignes_min",
+                "description": "Nombre minimal de positions, pour garder une diversification",
+                "valeur": 11,
+                "seuil": 6,
+                "respectee": true,
+                "detail": null,
+                "nature": "hypothèse de l'équipe"
+              },
+              {
+                "regle": "perte_max",
+                "description": "Pire baisse historique tolérée du portefeuille (perte maximale du sommet au creux)",
+                "valeur": -34.8,
+                "seuil": -45,
+                "respectee": true,
+                "detail": null,
+                "nature": "hypothèse de l'équipe"
+              }
+            ]
+          },
+          "periode": "semaines du 2021-11-19 au 2026-11-13 (261 semaines, dernier prix le 2026-11-12)",
+          "methode": "Prix convertis en CAD (USD x taux Banque du Canada du jour, ou dernier taux connu, jamais un taux futur), prix de fin de semaine (vendredi ou dernier prix connu), rendements hebdomadaires, annualisation sur 52 semaines, portefeuille rééquilibré chaque semaine aux poids indiqués, sans frais ni impôts.",
+          "sources": [
+            "prices_daily.csv : Yahoo Finance via yfinance, extrait le 2026-11-13, colonne adj_close (ajustée dividendes et fractionnements)",
+            "fx_usdcad_daily.csv : Banque du Canada, série FXUSDCAD (CAD pour 1 USD), extrait le 2026-11-13",
+            "Personas de l'énoncé officiel ; portefeuilles actuels et seuils = hypothèses de l'équipe"
+          ]
+        }
+      },
+      {
+        "type": "modele",
+        "duree_s": 16.49,
+        "request_id": "ccf2e95c-490b-4de6-8c83-86d6e2ddf939",
+        "texte": "Alternative confirmée conforme (id_appel A5). Je rédige maintenant l'avis final avec le bon identifiant."
+      },
+      {
+        "type": "controle",
+        "avis_propose": {
+          "alternative": {
+            "description": "Porter TSLA à 15 % (le maximum autorisé par la règle de concentration) plutôt qu'à 25 %, en réduisant proportionnellement les autres positions.",
+            "id_appel_verification": "A5",
+            "positions": [
+              {
+                "poids_pct": 4.25,
+                "symbole": "BTC-USD"
+              },
+              {
+                "poids_pct": 5.95,
+                "symbole": "CNR.TO"
+              },
+              {
+                "poids_pct": 4.25,
+                "symbole": "CSU.TO"
+              },
+              {
+                "poids_pct": 2.55,
+                "symbole": "ETH-USD"
+              },
+              {
+                "poids_pct": 4.25,
+                "symbole": "GLD"
+              },
+              {
+                "poids_pct": 6.8,
+                "symbole": "NVDA"
+              },
+              {
+                "poids_pct": 21.25,
+                "symbole": "QQQ"
+              },
+              {
+                "poids_pct": 5.95,
+                "symbole": "SHOP.TO"
+              },
+              {
+                "poids_pct": 17,
+                "symbole": "SPY"
+              },
+              {
+                "poids_pct": 15,
+                "symbole": "TSLA"
+              },
+              {
+                "poids_pct": 12.75,
+                "symbole": "XIU.TO"
+              }
+            ]
+          },
+          "faits": [
+            {
+              "affirmation": "Portefeuille actuel conforme à toutes les règles, avec une perte historique maximale de référence",
+              "id_appel": "A3",
+              "valeur": "-33,4 %"
+            },
+            {
+              "affirmation": "Avec TSLA à 25 %, le poids maximal autorisé pour un titre (15 %) est dépassé",
+              "id_appel": "A3",
+              "valeur": "25,0 % vs seuil 15 %"
+            },
+            {
+              "affirmation": "Avec TSLA à 25 %, la perte historique maximale du portefeuille s'aggrave",
+              "id_appel": "A3",
+              "valeur": "-39,3 %"
+            },
+            {
+              "affirmation": "Tesla seul a connu une perte historique très sévère",
+              "id_appel": "A2",
+              "valeur": "-68,2 % (2021-11-19 à 2023-01-06)"
+            },
+            {
+              "affirmation": "Avec TSLA ramené à 15 %, toutes les règles sont respectées et la perte max reste sous le seuil",
+              "id_appel": "A5",
+              "valeur": "-34,8 % (seuil -45 %)"
+            }
+          ],
+          "hypotheses": [
+            "Le seuil de 15 % par titre individuel est une hypothèse de l'équipe, pas une règle légale.",
+            "On suppose qu'Amira veut financer cette position en réduisant proportionnellement ses autres positions existantes.",
+            "Le poids de 25 % demandé est pris tel quel comme hypothèse de calcul (aucune autre précision donnée)."
+          ],
+          "limites": [
+            "Les indicateurs (rendement, volatilité, perte max) sont historiques (2021-2026) et ne prédisent pas l'avenir.",
+            "Aucune preuve ESG n'a été demandée ni vérifiée ici, car la demande ne porte pas sur ce critère.",
+            "La simulation ne tient pas compte de frais, d'impôts ou de rééquilibrage réel du portefeuille."
+          ],
+          "resume": "Mettre 25 % de votre épargne dans Tesla dépasse la limite de concentration fixée pour un titre individuel (15 %) et ferait grimper la perte historique maximale du portefeuille à -39,3 %, proche du plafond de -45 % que vous tolérez. Une position Tesla à 15 % reste conforme à toutes vos règles tout en gardant une bonne exposition à la croissance technologique. Rappel : les chiffres historiques ne garantissent rien pour l'avenir.",
+          "tensions_avec_profil": [
+            "Le profil d'Amira accepte un risque élevé, mais exige explicitement d'éviter la concentration (règle poids_max_titre = 15 %) : 25 % sur TSLA viole cette règle.",
+            "Le profil mentionne vouloir 'garder une certaine diversification et éviter de miser exclusivement sur la technologie' ; à 25 %, TSLA devient le plus gros titre du portefeuille, loin devant toute autre position (NVDA à 8 % avant)."
+          ],
+          "verdict": "incohérent"
+        },
+        "controles": [
+          {
+            "controle": "Au moins deux faits chiffrés",
+            "ok": true,
+            "detail": "5 fait(s)"
+          },
+          {
+            "controle": "Valeur « -33,4 % » (A3, simuler_modification)",
+            "ok": true,
+            "detail": "retrouvé dans la sortie de l'outil"
+          },
+          {
+            "controle": "Valeur « 25,0 % vs seuil 15 % » (A3, simuler_modification)",
+            "ok": true,
+            "detail": "retrouvé dans la sortie de l'outil"
+          },
+          {
+            "controle": "Valeur « -39,3 % » (A3, simuler_modification)",
+            "ok": true,
+            "detail": "retrouvé dans la sortie de l'outil"
+          },
+          {
+            "controle": "Valeur « -68,2 % (2021-11-19 à 2023-01-06) » (A2, indicateurs_actif)",
+            "ok": true,
+            "detail": "retrouvé dans la sortie de l'outil"
+          },
+          {
+            "controle": "Valeur « -34,8 % (seuil -45 %) » (A5, evaluer_portefeuille)",
+            "ok": true,
+            "detail": "retrouvé dans la sortie de l'outil"
+          },
+          {
+            "controle": "Alternative vérifiée par evaluer_portefeuille",
+            "ok": true,
+            "detail": "vérifiée et conforme"
+          },
+          {
+            "controle": "Limites et incertitudes indiquées",
+            "ok": true,
+            "detail": "3 limite(s)"
+          }
+        ]
+      }
+    ],
+    "jetons": {
+      "entree": 47524,
+      "sortie": 4237
+    },
+    "duree_totale_s": 41.6
+  },
+  "sources": {
+    "prix": "prices_daily.csv : Yahoo Finance via yfinance, extrait le 2026-11-13, colonne adj_close (ajustée dividendes et fractionnements)",
+    "change": "fx_usdcad_daily.csv : Banque du Canada, série FXUSDCAD (CAD pour 1 USD), extrait le 2026-11-13",
+    "univers": "assets_universe.csv : 31 actifs choisis par les organisateurs, secteurs simplifiés (noms GICS)",
+    "esg": "esg_preuves.csv : preuves ESG ajoutées à la main par l'équipe, chacune avec sa source et sa date",
+    "profils": "Personas de l'énoncé officiel ; portefeuilles actuels et seuils = hypothèses de l'équipe"
+  },
+  "methode": "Prix convertis en CAD (USD x taux Banque du Canada du jour, ou dernier taux connu, jamais un taux futur), prix de fin de semaine (vendredi ou dernier prix connu), rendements hebdomadaires, annualisation sur 52 semaines, portefeuille rééquilibré chaque semaine aux poids indiqués, sans frais ni impôts.",
+  "periode": "semaines du 2021-11-19 au 2026-11-13 (261 semaines, dernier prix le 2026-11-12)",
+  "corrections_donnees": [
+    {
+      "symbole": "CNQ.TO",
+      "avant": "2022-08-22",
+      "facteur": 1.021,
+      "raison": "Faux fractionnement de 1,021 le même jour qu'une distribution déjà comptée comme dividende"
+    }
+  ]
+}

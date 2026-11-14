@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr"><head><meta charset="utf-8"><title>Cousseil : one-pager</title>
+<style>
+@page { size: A4; margin: 10mm 12mm; }
+body { font-family: "Helvetica Neue", Arial, sans-serif; color:#101828; font-size:8.9pt; line-height:1.32; margin:0; }
+h1 { font-size:21pt; color:#1f3a5f; margin:0; letter-spacing:-0.01em; }
+.sous { font-size:12pt; color:#475467; margin:2px 0 10px; }
+.bandeau { border-top:2px solid #1f3a5f; border-bottom:1px solid #d0d5dd; padding:7px 0; margin-bottom:10px; font-size:9.5pt; color:#344054; }
+h2 { font-size:8.8pt; text-transform:uppercase; letter-spacing:.05em; color:#1f5f8b; margin:8px 0 3px; }
+.g { display:grid; grid-template-columns: 1fr 1fr; gap:0 22px; }
+p { margin:0 0 5px; }
+ul { margin:0; padding-left:15px; } li { margin-bottom:2px; }
+table { border-collapse:collapse; width:100%; font-size:8.3pt; margin-top:3px; }
+th { text-align:left; color:#475467; font-weight:600; border-bottom:1px solid #98a2b3; padding:3px 4px; }
+td { border-bottom:1px solid #eaecf0; padding:3px 4px; vertical-align:top; }
+td.n { text-align:right; white-space:nowrap; font-variant-numeric: tabular-nums; }
+.flux { display:flex; align-items:center; gap:5px; font-size:8.6pt; margin:4px 0 2px; }
+.flux span.b { border:1px solid #98a2b3; padding:4px 6px; text-align:center; flex:1; }
+.flux span.b.cle { border-color:#1f5f8b; background:#eef3f8; }
+.r { color:#b42318; font-weight:600; } .v { color:#027a48; font-weight:600; }
+.pied { margin-top:10px; border-top:1px solid #d0d5dd; padding-top:5px; font-size:8.3pt; color:#667085; }
+</style></head><body>
+<h1>Cousseil</h1>
+<div class="sous">Le coussin de sécurité d'une décision d'investissement, pour dormir sur ses deux oreilles</div>
+<div class="bandeau"><b>Louis Thibaudat, Nathan Marie et Virgile Rosin</b> · Datathon PolyFinances (Polytechnique Montréal), 14-15 novembre 2026 · défi AlphaForge AI · Banque Nationale × AWS · simulation pédagogique, profils fictifs, aucun conseil financier personnalisé</div>
+
+<div class="g">
+<div>
+<p style='font-size:8.4pt;color:#475467;margin:0 0 4px'><i>Cousseil</i> = <i>coussin</i> + <i>conseil</i> : le coussin de sécurité qui amortit une décision en la confrontant au profil et aux chocs du passé avant qu'elle soit prise. Il vérifie et explique, il ne recommande pas d'achat.</p><h2>Le problème</h2>
+<p>Robert, 59 ans, prend sa retraite dans 3 à 5 ans. Tesla fait la une, il veut y placer 25 % de son épargne. Une application de courtage exécute l'ordre sans le confronter à son profil. Les investisseurs disposent de beaucoup d'informations, mais rien ne relie leur demande du moment à leurs propres objectifs.</p>
+
+<h2>La solution</h2>
+<p>Cousseil reçoit une demande en langage courant et le profil de l'investisseur. Il simule l'effet de la demande, vérifie les contraintes du profil, rend un verdict argumenté et, si besoin, propose une alternative qui garde l'intention de départ et respecte le profil.</p>
+
+<h2>Approche agentique</h2>
+<div class="flux"><span class="b">Demande + profil</span>→<span class="b cle">Claude sur Amazon Bedrock choisit les calculs</span>→<span class="b">Calculs Python sur données publiques</span>→<span class="b cle">Contrôle de cohérence</span>→<span class="b">Avis expliqué + trace</span></div>
+<ul>
+<li><b>L'agent</b> (Claude Sonnet 5, Bedrock) décide quels calculs lancer, construit une alternative, la fait vérifier et la corrige.</li>
+<li><b>Les calculs</b> sont faits en Python : le modèle ne produit aucun chiffre lui-même.</li>
+<li><b>Le contrôle de cohérence</b> vérifie que chaque chiffre de l'avis provient du calcul cité. En cas d'écart, l'avis est renvoyé au modèle.</li>
+</ul>
+
+<h2>Pourquoi lui faire confiance</h2>
+<ul>
+<li>Chaque constat est relié à un calcul identifié (A1, A2…) et à sa source.</li>
+<li>Hypothèses, limites et incertitudes sont affichées à part des faits.</li>
+<li>Sans donnée, l'outil le dit : Palantir, hors des données, est « impossible à évaluer ».</li>
+<li>Test de sensibilité : le verdict est recalculé avec des seuils plus stricts ou plus souples.</li>
+</ul>
+</div>
+
+<div>
+<h2>Exemple chiffré : Robert et Tesla</h2>
+<table>
+<tr><th>Portefeuille</th><th class="n">Volatilité</th><th class="n">Pire baisse</th><th class="n">2022</th><th class="n">Règles</th></tr>
+<tr><td>Actuel</td><td class="n">6,5 %</td><td class="n">−9,8 %</td><td class="n">−5,2 %</td><td class="n v">6/6</td></tr>
+<tr><td>Avec 25 % de Tesla</td><td class="n">16,2 %</td><td class="n">−23,6 %</td><td class="n">−22,6 %</td><td class="n r">1/6</td></tr>
+</table>
+<p style="margin-top:4px">Verdict : <span class="r">incohérent avec le profil</span>. Conclusion inchangée avec des seuils jusqu'à 50 % plus souples.</p>
+
+<h2>Trois profils, trois réponses</h2>
+<table>
+<tr><th>Profil</th><th>Demande</th><th>Réponse</th></tr>
+<tr><td>Amira, risque élevé</td><td>Tout en NVIDIA, Bitcoin, Ether</td><td>Refus : pire baisse −65 %, crypto 66 %. Alternative IA et crypto diversifiée vérifiée (−28,6 %).</td></tr>
+<tr><td>Mateo, ESG</td><td>8 % d'Exxon Mobil</td><td>Meilleurs chiffres, mais une controverse documentée (poursuite climatique) contredit sa préférence ESG.</td></tr>
+<tr><td>Robert, prudent</td><td>25 % de Tesla</td><td>Refus argumenté, position limitée proposée.</td></tr>
+</table>
+
+<h2>Données</h2>
+<p>Prix de 31 actifs (Yahoo Finance, jeu des organisateurs, 2021-2026) convertis en CAD avec les taux de la Banque du Canada ; preuves ESG sourcées à la main (procureur du Massachusetts, Alberta Energy Regulator, tribunaux américains). Anomalie de données détectée et corrigée (CNQ.TO, distribution comptée deux fois).</p>
+
+<h2>Bénéfices</h2>
+<ul>
+<li><b>Investisseur :</b> un second regard chiffré avant d'agir, en langage simple.</li>
+<li><b>Banque :</b> une fonction intégrable à une plateforme de courtage, qui documente la cohérence entre la demande et le profil et conserve une trace d'audit.</li>
+</ul>
+
+<h2>Limites</h2>
+<p>Indicateurs historiques (non prédictifs), univers restreint (biais du survivant), preuves ESG partielles, seuils fixés par l'équipe et rendus transparents.</p>
+</div>
+</div>
+<div class="pied">Code, documentation technique et traces d'exécution : dépôt GitHub du projet. Technologies : Amazon Bedrock (Claude Sonnet 5, API Converse avec outils), Python, pandas, Streamlit.</div>
+</body></html>
