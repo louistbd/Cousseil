@@ -29,6 +29,17 @@ Chaque chiffre de l'avis provient d'un calcul identifié, et un contrôle de coh
 | **Trace** (`traces/*.json`) | Chaque calcul, chaque appel Bedrock (identifiant de requête) et chaque contrôle |
 | **Application** (`app.py`, Streamlit) | Analyse, comparaison des trois profils, sensibilité aux hypothèses, données et sources, méthode |
 
+## Application en ligne
+
+**[Ouvrir Cousseil en ligne](https://cousseil-kauuz8xurvmpb9rjpyhnqp.streamlit.app/)** : sans installation. La version en ligne s'ouvre sur les 25 analyses réelles enregistrées pendant le Datathon (Claude sur Amazon Bedrock) ; le bouton « Rejouer le déroulé » montre les étapes de l'agent, avec les calculs refaits en direct.
+
+Déploiement (Streamlit Community Cloud) : *Create app* → dépôt `louistbd/Cousseil`, branche `main`, fichier `app.py`. Pour activer les nouvelles analyses en ligne, ajouter dans *Settings → Secrets* :
+```toml
+AWS_ACCESS_KEY_ID = "..."
+AWS_SECRET_ACCESS_KEY = "..."
+AWS_SESSION_TOKEN = "..."
+```
+
 ## Lancer l'application
 
 1. Python 3.10 ou plus récent (sous Windows, Microsoft Store ou python.org avec « Add Python to PATH »).

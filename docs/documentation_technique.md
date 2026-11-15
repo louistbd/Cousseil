@@ -70,6 +70,19 @@ Un seul agent suffit. Les fonctions d'explicabilité et de gouvernance suggéré
 | Interface | Streamlit | Application web en Python, rapide à construire et à démontrer |
 | Infrastructure | Compte AWS de l'événement (us-east-1) ; exécution locale ou dans SageMaker Unified Studio | Région recommandée par les organisateurs |
 
+### Configuration AWS
+
+| Élément | Configuration |
+|---|---|
+| Service | Amazon Bedrock Runtime, API **Converse** avec utilisation d'outils (`toolConfig`) : 8 outils, dont l'outil final `rediger_avis` qui impose un avis structuré |
+| Modèle et région | `global.anthropic.claude-sonnet-5` (profil d'inférence global), région `us-east-1`, `maxTokens` 4 000 |
+| Accès | Identifiants temporaires du compte de l'événement (Workshop Studio) ou rôle de l'espace SageMaker ; permission nécessaire : `bedrock:InvokeModel`. Aucune clé dans le code : saisie dans l'interface, fichier local exclu de Git, ou secrets de l'hébergeur pour la version en ligne |
+| Performance | Mise en cache du prompt (`cachePoint` sur les consignes et les outils, repli automatique si non pris en charge) ; client `botocore` en mode de reprise adaptatif (8 essais) contre la limitation de débit ; délai de lecture 120 s |
+| Traçabilité | Chaque appel enregistre l'identifiant de requête Bedrock, la durée et les jetons (entrée, sortie, lus en cache) dans `traces/*.json` |
+| Coût | Une analyse consomme environ 40 000 à 60 000 jetons en entrée et 3 000 à 6 000 en sortie, pour 20 à 80 s |
+
+**Version en ligne.** L'application est publiée sur Streamlit Community Cloud à partir du dépôt GitHub : https://cousseil-kauuz8xurvmpb9rjpyhnqp.streamlit.app/ Sans identifiants AWS, elle s'ouvre sur les analyses réelles enregistrées pendant le Datathon et permet d'en rejouer le déroulé : les réponses du modèle viennent de la trace, les outils Python sont ré-exécutés en direct (les 25 analyses rejouées redonnent le même verdict). Avec des identifiants placés dans les secrets de l'hébergeur, « Nouvelle analyse » appelle Bedrock en direct.
+
 ## 4. Données
 
 ### Sources

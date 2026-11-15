@@ -5,6 +5,7 @@ Lancer : python -m streamlit run app.py
 Simulation pédagogique : profils fictifs, aucun conseil financier personnalisé.
 """
 
+import os
 import base64
 import html
 import json
@@ -30,6 +31,25 @@ st.set_page_config(page_title=f"{NOM} : analyse d'une décision d'investissement
 def logo(taille):
     return LOGO_SVG.replace('width="64" height="64"', f'width="{taille}" height="{taille}"')
 IDS_FICHIER = charger_identifiants_fichier(DOSSIER)
+
+
+def charger_secrets():
+    """Version en ligne (Streamlit Community Cloud) : identifiants AWS lus dans les secrets de l'hébergeur, jamais dans le dépôt."""
+    try:
+        s = st.secrets
+        if "AWS_ACCESS_KEY_ID" not in s or "AWS_SECRET_ACCESS_KEY" not in s:
+            return False
+        for k in ("AWS_ACCESS_KEY_ID", "AWS_SECRET_ACCESS_KEY", "AWS_SESSION_TOKEN"):
+            if k in s:
+                os.environ[k] = str(s[k])
+        os.environ.setdefault("AWS_DEFAULT_REGION", moteur_mod.REGION)
+        return True
+    except Exception:
+        return False
+
+
+IDS_SECRETS = charger_secrets()
+ACCES_AWS = IDS_FICHIER or IDS_SECRETS or bool(os.environ.get("AWS_ACCESS_KEY_ID"))
 
 EXEMPLES = {
     "robert": [("Tesla, 25 %", "Tesla est partout dans les nouvelles, je veux y mettre 25 % de mon épargne."),
@@ -333,13 +353,13 @@ with st.sidebar:
                               for k, v in p["regles"].items()))
 
     st.markdown("### Source de l'analyse")
-    source = st.radio("Source", ["Nouvelle analyse", "Analyse enregistrée"], label_visibility="collapsed",
+    source = st.radio("Source", ["Nouvelle analyse", "Analyse enregistrée"], label_visibility="collapsed", index=0 if ACCES_AWS else 1,
                       help="« Analyse enregistrée » réaffiche une analyse du dossier traces/ sans appeler AWS.")
 
-    titre_aws = "Connexion AWS · active" if IDS_FICHIER else "Connexion AWS · à configurer"
+    titre_aws = "Connexion AWS · active" if ACCES_AWS else "Connexion AWS · à configurer"
     with st.expander(titre_aws, expanded=False):
-        if IDS_FICHIER:
-            st.markdown("<div class='mention'><span class='ok'>Identifiants lus dans <b>identifiants_aws.txt</b>.</span> "
+        if ACCES_AWS:
+            st.markdown(f"<div class='mention'><span class='ok'>Identifiants lus dans <b>{'les secrets de l’hébergeur' if IDS_SECRETS else 'identifiants_aws.txt'}</b>.</span> "
                         "Rien à faire. Pour en utiliser d'autres, collez-les ci-dessous.</div>", unsafe_allow_html=True)
         else:
             st.markdown("<div class='mention'>Pour lancer une nouvelle analyse, collez le bloc « Get AWS CLI credentials » "
@@ -424,8 +444,28 @@ with ong_analyse:
                     return f"{PERSONAS.get(d['persona'], {}).get('nom', d['persona'])} · {d['demande'][:70]} · {d['trace']['id']}"
                 except Exception:
                     return f.name
+            if not ACCES_AWS:
+                st.markdown("<div class='panneau'>Version de démonstration en ligne : chaque analyse ci-dessous a été produite "
+                            "par le modèle Claude sur Amazon Bedrock pendant le Datathon et enregistrée avec sa trace complète. "
+                            "« Rejouer le déroulé » montre les étapes de l'agent une à une : les réponses du modèle viennent de la "
+                            "trace, les calculs sont refaits en direct.</div>", unsafe_allow_html=True)
             choix = st.selectbox("Analyse enregistrée", fichiers, format_func=etiquette)
             r = json.loads(choix.read_text(encoding="utf-8"))
+            if st.button("Rejouer le déroulé de cette analyse", help="Relecture d'une analyse réelle : réponses du modèle issues de la trace, calculs refaits."):
+                from rejeu import ClientRejeu
+                with st.status("Relecture d'une analyse réelle (Amazon Bedrock), en accéléré", expanded=True) as statut:
+                    try:
+                        c = ClientRejeu(DOSSIER, vitesse=0.25); c.choisir(str(choix))
+                        r2 = SecondAvis(DOSSIER, client=c).demander(r["persona"], r["demande"], verbose=False, suivi=statut.write)
+                        try:
+                            Path(r2.get("fichier_trace", "")).unlink()
+                        except Exception:
+                            pass
+                        r = r2
+                        statut.update(label="Relecture terminée", state="complete", expanded=False)
+                    except Exception as err:
+                        statut.update(label="Relecture interrompue", state="error", expanded=False)
+                        st.error(message_erreur(err))
             st.session_state[f"resultat_{r['persona']}"] = r
             afficher_resultat(r)
 
