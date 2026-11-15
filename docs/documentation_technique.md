@@ -134,16 +134,22 @@ Cet exemple montre que l'explication est **liée à l'exécution réelle** : une
 
 ## 6. Validation
 
-**Scénarios** (vrai modèle sur Bedrock, le 14 novembre 2026) :
+**8 scénarios rejoués sur le vrai modèle** (Amazon Bedrock, 14 novembre 2026, 17 h 18, `lancer_tests.py`) : **8 verdicts conformes à l'attendu sur 8**, 8 contrôles de cohérence sur 8 réussis pour chaque avis final. Détail et résumé de chaque avis : `docs/tests_resultats.md`.
 
-| Demande | Verdict | Points clés |
-|---|---|---|
-| Robert : 25 % de Tesla | Incohérent | Volatilité de 6,5 % à 16,2 % ; pire baisse de −9,8 % à −23,6 % ; 2022 de −5,2 % à −22,6 % ; 1 règle sur 6 respectée |
-| Amira : tout en IA et crypto | Incohérent | Voir section 5 |
-| Mateo : 8 % d'Exxon Mobil | Version 1, sans preuve ESG : cohérent avec réserves, car il manque l'information ESG. Avec les preuves : non conforme sur la règle ESG. | Sur les chiffres, Exxon améliore le portefeuille (volatilité 8,1 %, pire baisse −10,9 %). Seule la préférence ESG, appuyée par une preuve, justifie le refus. |
-| Robert : 5 % de Palantir | Impossible à évaluer | Actif absent des données : aucun chiffre inventé, alternative QQQ 5 % vérifiée |
+| # | Profil | Demande | Attendu | Obtenu | Renvois | Durée |
+|---|---|---|---|---|---|---|
+| 1 | Robert | 25 % de Tesla | incohérent | incohérent | 0 | 23 s |
+| 2 | Amira | 25 % de Tesla | incohérent ou réserves | incohérent | 1 | 38 s |
+| 3 | Amira | Tout en NVIDIA, Bitcoin, Ether | incohérent | incohérent | 0 | 41 s |
+| 4 | Mateo | 8 % d'Exxon Mobil | incohérent ou réserves | incohérent | 0 | 41 s |
+| 5 | Robert | 5 % de Palantir (hors données) | impossible à évaluer | impossible à évaluer | 1 | 46 s |
+| 6 | Mateo | 10 % d'Enbridge | incohérent | incohérent | 2 | 77 s |
+| 7 | Robert | 20 % de Bitcoin | incohérent | incohérent | 0 | 35 s |
+| 8 | Amira | +10 % de QQQ | cohérent ou réserves | cohérent avec réserves | 2 | 51 s |
 
-*Les 8 scénarios de validation se relancent avec `python lancer_tests.py` ; les résultats sont écrits dans `docs/tests_resultats.md`. Vérification des sources ESG : `docs/tests.md`.*
+Points clés : pour Robert et Tesla, la volatilité passe de 6,5 % à 16,2 %, la pire baisse de −9,8 % à −23,6 %, et Tesla porterait 82 % du risque du portefeuille pour 25 % du capital ; l'alternative limitée à 5 % est vérifiée. Pour Mateo et Exxon, les chiffres s'améliorent (pire baisse −10,9 %) : seule la règle ESG, appuyée par une preuve datée, justifie le refus. Pour Palantir, absent des données, aucun chiffre n'est inventé. Les renvois montrent le contrôle de cohérence à l'œuvre : 4 avis sur 8 sont passés du premier coup ; les 4 autres ont été renvoyés 1 ou 2 fois, puis corrigés avant affichage.
+
+*Vérification des sources ESG : `docs/tests.md`.*
 
 **Sensibilité aux hypothèses** (onglet « Sensibilité ») : les seuils sont multipliés par 0,75 (plus stricts), 1,25 et 1,5 (plus souples).
 - Robert, 25 % de Tesla : non conforme à **tous** les réglages (au mieux 2 règles sur 6). Le verdict ne dépend pas d'un réglage fin.
@@ -175,4 +181,4 @@ Cet exemple montre que l'explication est **liée à l'exécution réelle** : une
 pip install -r requirements.txt
 python -m streamlit run app.py      # ou double-clic sur lancer_app.bat sous Windows
 ```
-Dans l'application, collez les identifiants temporaires AWS (Workshop Studio, « Get AWS CLI credentials », région us-east-1). Dans SageMaker Unified Studio, laissez vide : le rôle de l'espace est utilisé. Le mode « Analyse enregistrée » réaffiche les traces sans appeler AWS. Le test rapide d'accès à Bedrock se lance avec `python smoke_test_bedrock.py --prix prices_daily.csv`.
+Dans l'application, collez les identifiants temporaires AWS (Workshop Studio, « Get AWS CLI credentials », région us-east-1), ou placez-les dans `identifiants_aws.txt` (exclu de Git). Les 8 scénarios se relancent avec `python lancer_tests.py`. Dans SageMaker Unified Studio, laissez vide : le rôle de l'espace est utilisé. Le mode « Analyse enregistrée » réaffiche les traces sans appeler AWS. Le test rapide d'accès à Bedrock se lance avec `python smoke_test_bedrock.py --prix prices_daily.csv`.

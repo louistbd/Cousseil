@@ -26,8 +26,8 @@ td.n { text-align:right; white-space:nowrap; font-variant-numeric: tabular-nums;
 
 <div class="g">
 <div>
-<p style='font-size:8.4pt;color:#475467;margin:0 0 4px'><i>Cousseil</i> = <i>coussin</i> + <i>conseil</i> : le coussin de sécurité qui amortit une décision en la confrontant au profil et aux chocs du passé avant qu'elle soit prise. Il vérifie et explique, il ne recommande pas d'achat.</p><h2>Le problème</h2>
-<p>Robert, 59 ans, prend sa retraite dans 3 à 5 ans. Tesla fait la une, il veut y placer 25 % de son épargne. Une application de courtage exécute l'ordre sans le confronter à son profil. Les investisseurs disposent de beaucoup d'informations, mais rien ne relie leur demande du moment à leurs propres objectifs.</p>
+<p style='font-size:8.4pt;color:#475467;margin:0 0 4px'><i>Cousseil</i> = <i>coussin</i> + <i>conseil</i>&nbsp;: le coussin de sécurité qui amortit une décision en la confrontant au profil et aux chocs du passé avant qu'elle soit prise. Il vérifie et explique, il ne recommande pas d'achat.</p><h2>Le problème</h2>
+<p>Robert, 59 ans, prend sa retraite dans 3 à 5 ans. Tesla fait la une, il veut y placer 25&nbsp;% de son épargne. Une application de courtage exécute l'ordre sans le confronter à son profil. Les investisseurs disposent de beaucoup d'informations, mais rien ne relie leur demande du moment à leurs propres objectifs.</p>
 
 <h2>La solution</h2>
 <p>Cousseil reçoit une demande en langage courant et le profil de l'investisseur. Il simule l'effet de la demande, vérifie les contraintes du profil, rend un verdict argumenté et, si besoin, propose une alternative qui garde l'intention de départ et respecte le profil.</p>
@@ -36,34 +36,34 @@ td.n { text-align:right; white-space:nowrap; font-variant-numeric: tabular-nums;
 <div class="flux"><span class="b">Demande + profil</span>→<span class="b cle">Claude sur Amazon Bedrock choisit les calculs</span>→<span class="b">Calculs Python sur données publiques</span>→<span class="b cle">Contrôle de cohérence</span>→<span class="b">Avis expliqué + trace</span></div>
 <ul>
 <li><b>L'agent</b> (Claude Sonnet 5, Bedrock) décide quels calculs lancer, construit une alternative, la fait vérifier et la corrige.</li>
-<li><b>Les calculs</b> sont faits en Python : le modèle ne produit aucun chiffre lui-même.</li>
+<li><b>Les calculs</b> sont faits en Python&nbsp;: le modèle ne produit aucun chiffre lui-même.</li>
 <li><b>Le contrôle de cohérence</b> vérifie que chaque chiffre de l'avis provient du calcul cité. En cas d'écart, l'avis est renvoyé au modèle.</li>
 </ul>
 
-<h2>Pourquoi lui faire confiance</h2>
+<h2>Originalité</h2><ul style='margin:0 0 2px 14px;padding:0'><li>On vérifie une <b>décision ponctuelle</b> face au profil, au lieu de construire un portefeuille de plus.</li><li>Le modèle <b>ne produit aucun chiffre</b>&nbsp;: un contrôle automatique renvoie l'avis si un chiffre ne vient pas du calcul cité.</li><li>Une <b>alternative chiffrée</b>&nbsp;: le poids maximal que le profil accepte, puis une vérification.</li><li>Des <b>critères non financiers sourcés</b> (preuves ESG datées) pèsent autant que le risque.</li></ul><h2>Pourquoi lui faire confiance</h2>
 <ul>
 <li>Chaque constat est relié à un calcul identifié (A1, A2…) et à sa source.</li>
 <li>Hypothèses, limites et incertitudes sont affichées à part des faits.</li>
-<li>Sans donnée, l'outil le dit : Palantir, hors des données, est « impossible à évaluer ».</li>
-<li>Test de sensibilité : le verdict est recalculé avec des seuils plus stricts ou plus souples.</li>
+<li>Sans donnée, l'outil le dit&nbsp;: Palantir, hors des données, est «&nbsp;impossible à évaluer&nbsp;».</li>
+<li>Test de sensibilité&nbsp;: le verdict est recalculé avec des seuils plus stricts ou plus souples.</li>
 </ul>
 </div>
 
 <div>
-<h2>Exemple chiffré : Robert et Tesla</h2>
+<h2>Exemple chiffré&nbsp;: Robert et Tesla</h2>
 <table>
 <tr><th>Portefeuille</th><th class="n">Volatilité</th><th class="n">Pire baisse</th><th class="n">2022</th><th class="n">Règles</th></tr>
-<tr><td>Actuel</td><td class="n">6,5 %</td><td class="n">−9,8 %</td><td class="n">−5,2 %</td><td class="n v">6/6</td></tr>
-<tr><td>Avec 25 % de Tesla</td><td class="n">16,2 %</td><td class="n">−23,6 %</td><td class="n">−22,6 %</td><td class="n r">1/6</td></tr>
+<tr><td>Actuel</td><td class="n">6,5&nbsp;%</td><td class="n">−9,8&nbsp;%</td><td class="n">−5,2&nbsp;%</td><td class="n v">6/6</td></tr>
+<tr><td>Avec 25&nbsp;% de Tesla</td><td class="n">16,2&nbsp;%</td><td class="n">−23,6&nbsp;%</td><td class="n">−22,6&nbsp;%</td><td class="n r">1/6</td></tr>
 </table>
-<p style="margin-top:4px">Verdict : <span class="r">incohérent avec le profil</span>. Conclusion inchangée avec des seuils jusqu'à 50 % plus souples.</p>
+<p style="margin-top:4px">Verdict&nbsp;: <span class="r">incohérent avec le profil</span>. Conclusion inchangée avec des seuils jusqu'à 50&nbsp;% plus souples.</p>
 
 <h2>Trois profils, trois réponses</h2>
 <table>
 <tr><th>Profil</th><th>Demande</th><th>Réponse</th></tr>
-<tr><td>Amira, risque élevé</td><td>Tout en NVIDIA, Bitcoin, Ether</td><td>Refus : pire baisse −65 %, crypto 66 %. Alternative IA et crypto diversifiée vérifiée (−28,6 %).</td></tr>
-<tr><td>Mateo, ESG</td><td>8 % d'Exxon Mobil</td><td>Meilleurs chiffres, mais une controverse documentée (poursuite climatique) contredit sa préférence ESG.</td></tr>
-<tr><td>Robert, prudent</td><td>25 % de Tesla</td><td>Refus argumenté, position limitée proposée.</td></tr>
+<tr><td>Amira, risque élevé</td><td>Tout en NVIDIA, Bitcoin, Ether</td><td>Refus&nbsp;: pire baisse −65&nbsp;%, crypto 66&nbsp;%. Alternative IA et crypto diversifiée vérifiée (−28,6&nbsp;%).</td></tr>
+<tr><td>Mateo, ESG</td><td>8&nbsp;% d'Exxon Mobil</td><td>Meilleurs chiffres, mais une controverse documentée (poursuite climatique) contredit sa préférence ESG.</td></tr>
+<tr><td>Robert, prudent</td><td>25&nbsp;% de Tesla</td><td>Refus&nbsp;: Tesla porterait 82&nbsp;% du risque. Position limitée à 5&nbsp;%, vérifiée.</td></tr>
 </table>
 
 <h2>Données</h2>
@@ -71,13 +71,13 @@ td.n { text-align:right; white-space:nowrap; font-variant-numeric: tabular-nums;
 
 <h2>Bénéfices</h2>
 <ul>
-<li><b>Investisseur :</b> un second regard chiffré avant d'agir, en langage simple.</li>
-<li><b>Banque :</b> une fonction intégrable à une plateforme de courtage, qui documente la cohérence entre la demande et le profil et conserve une trace d'audit.</li>
+<li><b>Investisseur&nbsp;:</b> un second regard chiffré avant d'agir, en langage simple.</li>
+<li><b>Banque&nbsp;:</b> une fonction intégrable à une plateforme de courtage, qui documente la cohérence entre la demande et le profil et conserve une trace d'audit.</li>
 </ul>
 
 <h2>Limites</h2>
 <p>Indicateurs historiques (non prédictifs), univers restreint (biais du survivant), preuves ESG partielles, seuils fixés par l'équipe et rendus transparents.</p>
 </div>
 </div>
-<div class="pied">Code, documentation technique et traces d'exécution : dépôt GitHub du projet. Technologies : Amazon Bedrock (Claude Sonnet 5, API Converse avec outils), Python, pandas, Streamlit.</div>
+<div class="pied"><b>Validation&nbsp;:</b> 8 scénarios testés sur Amazon Bedrock, 8 verdicts conformes, 25 analyses réelles tracées. Code, documentation, vidéo et traces&nbsp;: github.com/louistbd/Cousseil. Technologies&nbsp;: Amazon Bedrock (Claude Sonnet 5, API Converse avec outils), Python, pandas, Streamlit.</div>
 </body></html>

@@ -33,7 +33,7 @@ Chaque chiffre de l'avis provient d'un calcul identifié, et un contrôle de coh
 
 1. Python 3.10 ou plus récent (sous Windows, Microsoft Store ou python.org avec « Add Python to PATH »).
 2. `pip install -r requirements.txt`, puis `python -m streamlit run app.py`. Sous Windows, vous pouvez aussi double-cliquer sur `lancer_app.bat`.
-3. Dans « Connexion AWS », collez les identifiants temporaires (Workshop Studio, « Get AWS CLI credentials »). Dans SageMaker Unified Studio, laissez vide : le rôle de l'espace est utilisé.
+3. Dans « Connexion AWS », collez les identifiants temporaires (Workshop Studio, « Get AWS CLI credentials »). Autre option : les coller dans un fichier `identifiants_aws.txt` à la racine (exclu de Git). Dans SageMaker Unified Studio, laissez vide : le rôle de l'espace est utilisé. Sans accès AWS, choisissez « Analyse enregistrée » pour rejouer les 25 analyses réelles du dossier `traces/`.
 4. Choisissez un profil et une demande, puis cliquez sur « Analyser la demande ».
 
 « Analyse enregistrée » réaffiche une trace sans appeler AWS. Le test d'accès à Bedrock se lance avec `python smoke_test_bedrock.py --prix prices_daily.csv`.
@@ -44,8 +44,8 @@ Chaque chiffre de l'avis provient d'un calcul identifié, et un contrôle de coh
 |---|---|
 | Documentation technique | [`docs/documentation_technique.pdf`](docs/documentation_technique.pdf) ([source](docs/documentation_technique.md)) |
 | One-pager | [`docs/one_pager.pdf`](docs/one_pager.pdf) |
-| Vidéo de démonstration | *lien à ajouter* · script : [`docs/script_video.md`](docs/script_video.md) |
-| Tests | [`docs/tests.md`](docs/tests.md) · résultats : `docs/tests_resultats.md` (produit par `python lancer_tests.py`) |
+| Vidéo de démonstration | [`docs/Cousseil_video_finale.mp4`](docs/Cousseil_video_finale.mp4) (5 min 14) · lien YouTube : *à ajouter* · script : [`docs/script_video.md`](docs/script_video.md) |
+| Tests | [`docs/tests_resultats.md`](docs/tests_resultats.md) : 8 scénarios sur Bedrock, **8 verdicts conformes** (produit par `python lancer_tests.py`) · sources ESG vérifiées : [`docs/tests.md`](docs/tests.md) |
 | Exemples d'exécution réelle | [`traces/`](traces/) |
 
 ## Données

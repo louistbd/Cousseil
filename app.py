@@ -293,7 +293,11 @@ def afficher_resultat(r, compact=False):
                   "Contrôle": e(c["controle"]), "Détail": e(c["detail"])} for c in ctrl])
         renvois = [x for x in t.get("etapes", []) if x["type"] == "controle" and any(not c["ok"] for c in x["controles"])]
         if renvois:
-            st.markdown(f"L'avis a été renvoyé au modèle {len(renvois)} fois avant d'être accepté.")
+            st.markdown(f"<div class='section'>Renvois au modèle avant acceptation : {len(renvois)}</div>", unsafe_allow_html=True)
+            for k, x in enumerate(renvois, 1):
+                tableau(["Renvoi", "Écart détecté", "Détail"],
+                        [{"Renvoi": str(k), "Écart détecté": e(c["controle"]), "Détail": f"<span class='ecart'>{e(c['detail'])}</span>"}
+                         for c in x["controles"] if not c["ok"]], largeurs=[10, 60, 30])
     with st.expander("Trace d'exécution"):
         st.caption(f"Modèle {t.get('modele')} sur Amazon Bedrock (us-east-1) · "
                    f"{t.get('jetons', {}).get('entree', 0)} jetons en entrée, {t.get('jetons', {}).get('sortie', 0)} en sortie.")
