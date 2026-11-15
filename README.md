@@ -44,7 +44,7 @@ Chaque chiffre de l'avis provient d'un calcul identifié, et un contrôle de coh
 |---|---|
 | Documentation technique | [`docs/documentation_technique.pdf`](docs/documentation_technique.pdf) ([source](docs/documentation_technique.md)) |
 | One-pager | [`docs/one_pager.pdf`](docs/one_pager.pdf) |
-| Vidéo de démonstration | [`docs/Cousseil_video_finale.mp4`](docs/Cousseil_video_finale.mp4) (5 min 14) · lien YouTube : *à ajouter* · script : [`docs/script_video.md`](docs/script_video.md) |
+| Vidéo de démonstration | [`docs/Cousseil_video_finale.mp4`](docs/Cousseil_video_finale.mp4) (5 min 14) · vidéo en ligne : [youtu.be/6eXu_W6k-r8](https://youtu.be/6eXu_W6k-r8) · script : [`docs/script_video.md`](docs/script_video.md) |
 | Tests | [`docs/tests_resultats.md`](docs/tests_resultats.md) : 8 scénarios sur Bedrock, **8 verdicts conformes** (produit par `python lancer_tests.py`) · sources ESG vérifiées : [`docs/tests.md`](docs/tests.md) |
 | Exemples d'exécution réelle | [`traces/`](traces/) |
 
